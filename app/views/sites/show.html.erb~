@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Name:</b>
+  <%= @site.name %>
+</p>
+<p>
+  <b>URL:</b>
+  <%= @site.url %>
+</p>
+<p>
+  <b>Description:</b>
+  <%= @site.description %>
+</p>
+<p>
+  <b>id:</b>
+  <%= @site.id %>
+</p>
+<p>
+  <b>To Put Button On Your Site, copy and paste the following code:</b><br/>
+  <textarea>
+	  <a href="localhost:3001/imp_sites/<%= @current_user.id %>/<%= @site.id %><img src="icare_small.jpg"/
+   </textarea>
+</p>
+
+
+
+<%= link_to 'Edit', edit_site_path(@site) %> |
+<%= link_to 'Back', sites_path %>
