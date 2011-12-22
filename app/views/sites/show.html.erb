@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag    "sites" %>
+
 <p id="notice"><%= notice %></p>
 <p>
   <b>Name:</b>
@@ -17,9 +19,7 @@
 </p>
 <p>
   <b>To Put Button On Your Site, copy and paste the following code:</b><br/>
-  <textarea>
-	  <a href="localhost:3001/imp_sites/<%= @current_user.id %>/<%= @site.id %>><img src="icare_small.jpg"/></a>
-   </textarea>
+  <textarea id="copytext"><a href="http://localhost:3001/imp_sites/<%= @current_user.id %>/<%= @site.id %>"><img src="http://localhost:3001/icare_small.jpg"/></a></textarea>
 </p>
 
 
