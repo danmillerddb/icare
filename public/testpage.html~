@@ -2,7 +2,7 @@
 <script language="javascript">
 $(document).ready( function() {
 
-    $('a#df9sdf7df9sf9sdf9g').click( function {
+    $('a#df9sdf7df9sf9sdf9g').click( function() {
 
 	$.get($('a#df9sdf7df9sf9sdf9g').attr('href'), function(data) {
 	  // $('').html(data);
