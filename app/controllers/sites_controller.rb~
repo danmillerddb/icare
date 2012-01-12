@@ -17,7 +17,7 @@ class SitesController < ApplicationController
       @site = @user.sites.find(params[:site_id]) # :owner = user's id
  
     
-    if not current_user.voted?
+    if not current_user.voted?(@site)
        current_user.vote(@site, :up) 
       @support = @site.supports.new
       @support.save
