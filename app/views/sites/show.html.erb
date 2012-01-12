@@ -19,7 +19,7 @@
 </p>
 <p>
   <b>To Put Button On Your Site, copy and paste the following code:</b><br/>
-  <textarea id="copytext"><a href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= @site.id %>"><img src="http://<%= request.host_with_port  %>/icare_small.jpg"/></a></textarea>
+  <textarea id="copytext"><a href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= @site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/icare_small.jpg"/></a></textarea>
 </p>
 
 Current supporter count: <%= @vote_count %><br/><br/>
