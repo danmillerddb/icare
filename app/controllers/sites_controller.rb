@@ -17,7 +17,11 @@ class SitesController < ApplicationController
     @user = User.find(params[:owner])
     @site = @user.sites.find(params[:site_id]) # :owner = user's id
     @user.vote(@site, :up) 
-    @user.save
+    
+    if @user.save # if vote is saved, then save info about time as well
+      @support = @site.supports.new
+      @support.save
+    end
     
     respond_to do |format|
       format.html # show.html.erb
