@@ -1,5 +1,6 @@
 <h1>Listing sites</h1>
 
+<h2>Sites you support</h2>
 <table >
   <tr>
     <th>Name</th>
@@ -14,6 +15,7 @@
     <td><%= site.name %></td>
     <td><%= site.description %></td>
     <td><%= site.url %></td>
+    <td><%= current_user.id %></td>
     <td><%= site.id %></td>
     <td><%= link_to 'Show', site %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_site_path(site) %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Delete', site, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

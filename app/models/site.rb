@@ -1,8 +1,14 @@
 class Site
   include Mongoid::Document
+  include Mongo::Voteable
+
   field :name, type: String
   field :url, type: String
   field :description, type: String
   field :supporters, type: Array
-  embedded_in :users
+  field :count, type: Integer 
+  belongs_to :user
+  embeds_many :supporters
+  
+  voteable self, :up => +1, :down => -1
 end

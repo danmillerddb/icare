@@ -13,13 +13,16 @@ class SitesController < ApplicationController
   
   # GET /sites/1.json
   def impress
-    @site = User.find(params[:owner]).sites.find(params[:site_id]) # :owner = user's id
-
-    render 'show.html.erb'
-    #respond_to do |format|
-   #   format.html # show.html.erb
-   #   format.json { render json: @site }
-   # end
+    @supporter = current_user
+    @user = User.find(params[:owner])
+    @site = @user.sites.find(params[:site_id]) # :owner = user's id
+    @user.vote(@site, :up) 
+    @user.save
+    
+    respond_to do |format|
+      format.html # show.html.erb
+     format.json { render json: @site }
+    end
   end
 
 
@@ -27,7 +30,7 @@ class SitesController < ApplicationController
   # GET /sites/1.json
   def show
     @site = current_user.sites.find(params[:id])
-
+    @vote_count = @site.votes_count
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @site }

@@ -9,7 +9,7 @@ gem 'sqlite3'
 gem 'bson_ext'
 gem 'mongoid'
 gem 'devise'
-
+gem 'voteable_mongo'
 
 
 gem 'jquery-rails'
