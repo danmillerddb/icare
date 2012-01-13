@@ -2,8 +2,8 @@ Icare::Application.routes.draw do
   root :to => "sites#index"
   resources :sites
   match 'imp_sites/:owner/:site_id' => 'sites#impress'
-  devise_for :users
 
+  devise_for :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -26,7 +26,7 @@ class SitesController < ApplicationController
     respond_to do |format|
       #format.html # show.html.erb
      # format.json { render json: @site }
-      format.js 
+      format.js { render :nothing => true }
     end
   end
 
