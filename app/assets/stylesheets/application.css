@@ -5,3 +5,29 @@
  *= require_self
  *= require_tree . 
 */
+
+div#topbar
+{
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  background-color: #c8f0e9;
+  text-align: right;
+  vertical-align: middle;
+}
+
+div#topbar div#signin
+{
+  top:3px;
+  right: 10px;
+  position: relative;
+}
+
+div#topbar div#signin input#email, div#topbar div#signin input#password
+{
+  right: 10px;
+  position: relative;
+    background-color: #c8f0e9;
+  
+}
