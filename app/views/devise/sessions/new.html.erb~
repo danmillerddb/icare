@@ -4,8 +4,39 @@
 	  <%= f.email_field :email, :id => 'email' %>
 	  <%= f.password_field :password, :id => 'password' %>
 
-	<%= f.submit "Sign in", :id => 'sign_in' %>    <% end %>
+	<%= f.submit "", :id => 'sign_in' %>    <% end %>
       </div>
 
 </div>
 
+<div id="main_area">
+
+<img src="/assets/Header_Image.png" id="main_image" />
+<div id="subheader">A new way to show suppor when 'Like' isn't the right word.</div>
+<img src="/assets/HERO_IMAGE_1.png" id="hero_image" />
+
+<div id="info_container">
+<div id="left_image">
+  <img src="/assets/LEFT_ARROW_SEE.png" />
+</div>
+<div id="left_side">
+    <div id="our_mission">
+	  <h2>Our Mission.</h2>
+	  Give people a way to show support for a wide variety of things such as: causes, social issues, charities, even government. 
+	  But that's not all. I CARE will also reflect the most cared about topics worldwide.
+     </div>
+     <div id="our_hope">
+	<h2>Our Hope</h2>
+	Connect people through issues and gain awareness to create action.
+    </div>
+</div>
+  <div id="right_side">
+      <h2>How It Works.</h2>
+      It's simple. Copy the ICARE code directly onto your site. 
+      That's it. From there, visitors can click onthe button to care about articles, images, or posts.
+  </div>
+<div id="right_image">
+  <img src="/assets/RIGHT_ARROW_COPY_PASTE.png" />
+
+</div>
+</div>

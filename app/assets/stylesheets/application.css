@@ -32,6 +32,120 @@ div#topbar div#signin input#email, div#topbar div#signin input#password
   
 }
 
+div#main_area
+{
+  background-color: #caf2ec;
+  position: relative;
+  text-align: center;
+  margin: auto;
+  top: 40px;
+}
+
+img#main_image
+{
+  top: 45px;
+  margin-top: 45px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+
+body
+{
+  font-family: helvetica;
+  color: #669999;
+  
+}
+
+div#subheader
+{
+  position: relative;
+  margin-top: 30px;
+  top: 30px;
+  
+  margin-bottom: 26px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+div#info_container
+{
+  
+   position: relative;
+  top: 60px;
+  font-size: 11px;
+  width: 800px;
+  margin: auto;
+}
+
+div#info_container div#left_side
+{
+  float: left;
+  width: 300px;
+ 
+}
+div#info_container div#right_side
+{
+  float: left;
+  width: 300px;
+ 
+}
+
+div#info_container div#left_image img#see_the_impact
+{
+  float: left;
+ 
+}
+
+div#info_container div#left_image 
+{
+  float: left;
+  width: 100px;
+ 
+}
+
+div#info_container div#right_image 
+{
+  float: right;
+  width: 100px;
+  position: relative;
+  top: -110px;
+  left: 17px;
+}
+
+div#our_mission
+{
+  text-align: left;
+  position: relative;
+}
+
+div#our_hope
+{
+  margin-bottom: 18px;
+  position: relative;
+  text-align:left;
+}
+
+div#how_it_works, div#right_side
+{
+  text-align: left;
+}
+
+img#left_image
+{
+  float: left;
+  
+}
+
+img#hero_image
+{
+  top: 45px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+
+
 input#sign_in
 {
   background-image: url('SignIn_BTN.png');
