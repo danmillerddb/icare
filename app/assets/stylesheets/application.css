@@ -28,17 +28,18 @@ div#topbar div#signin input#email, div#topbar div#signin input#password
 {
   right: 10px;
   position: relative;
-    background-color: #c8f0e9;
+    background-color: #c8f0e8;
   
 }
 
 div#main_area
 {
-  background-color: #caf2ec;
+  background-color: #ADE9E1;
   position: relative;
   text-align: center;
   margin: auto;
   top: 40px;
+  height: 100%;
 }
 
 img#main_image
@@ -54,8 +55,10 @@ body
 {
   font-family: helvetica;
   color: #669999;
-  
+  background-color: #ADE9E1;
+  height: 100%;
 }
+
 
 div#subheader
 {
@@ -76,25 +79,26 @@ div#info_container
   font-size: 11px;
   width: 800px;
   margin: auto;
+   background-color: #ADE9E1;
 }
 
 div#info_container div#left_side
 {
   float: left;
   width: 300px;
- 
+  background-color: #ADE9E1;
 }
 div#info_container div#right_side
 {
   float: left;
   width: 300px;
- 
+  background-color: #ADE9E1;
 }
 
 div#info_container div#left_image img#see_the_impact
 {
   float: left;
- 
+  background-color: #ADE9E1;
 }
 
 div#info_container div#left_image 
@@ -117,6 +121,7 @@ div#our_mission
 {
   text-align: left;
   position: relative;
+   background-color: #ADE9E1;
 }
 
 div#our_hope
@@ -129,11 +134,13 @@ div#our_hope
 div#how_it_works, div#right_side
 {
   text-align: left;
+   background-color: #ADE9E1;
 }
 
 img#left_image
 {
   float: left;
+
   
 }
 
@@ -145,6 +152,17 @@ img#hero_image
   text-align: center;
 }
 
+hr
+{
+  width: 100%;
+}
+
+div#bottom_signup
+{
+  position: relative;
+  top: 160px;
+  margin-top: 160px;
+}
 
 input#sign_in
 {
