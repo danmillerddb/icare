@@ -162,7 +162,30 @@ div#bottom_signup
   position: relative;
   top: 160px;
   margin-top: 160px;
+  width: 750px;
+  margin: auto;
 }
+
+div#bottom_signup input#user_email
+{
+  margin-right: 15px;
+  background-color: #caf2ec;
+}
+
+div#bottom_signup input#user_password
+{
+  margin-right: 15px;
+  background-color: #caf2ec;
+}
+
+div#bottom_signup input#user_password_confirmation
+{
+  
+  background-color: #caf2ec;
+}
+
+
+
 
 input#sign_in
 {
