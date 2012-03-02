@@ -81,7 +81,7 @@ body
 {
   font-family: helvetica;
   color: #669999;
-  background-color: #ADE9E1;
+  background-color: #c8f0e8;
   background-image: url('/icare_gradiant.jpg');
   background-repeat: repeat-x;
   height: 100%;
@@ -107,6 +107,11 @@ div#info_container
   font-size: 11px;
   width: 800px;
   margin: auto;
+}
+
+div#register_text
+{
+  margin-bottom: 16x;
 }
 
 div#info_container div#left_side
@@ -177,6 +182,8 @@ img#hero_image
 hr
 {
   width: 100%;
+  height: 1px;
+  
 }
 
 div#bottom_signup
