@@ -1,60 +1,62 @@
-<div id="topbar">
-    <div id="signin">
-	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-	  <%= f.email_field :email, :id => 'email' %>
-	  <%= f.password_field :password, :id => 'password' %>
+<div id="wrapper">
+  <div id="topbar">
+      <div id="signin">
+	  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	    <%= f.email_field :email, :id => 'email' %>
+	    <%= f.password_field :password, :id => 'password' %>
 
-	<%= f.submit "", :type => :image, :src => '/assets/SignIn_BTN.png' %>    <% end %>
-      </div>
-
-</div>
-
-<div id="main_area">
-
-  <img src="/assets/Header_Image.png" id="main_image" />
-  <div id="subheader">A new way to show support when 'Like' isn't the right word.</div>
-  <img src="/assets/HERO_IMAGE_1.png" id="hero_image" />
-
-  <div id="info_container">
-    <div id="left_image">
-      <img src="/assets/LEFT_ARROW_SEE.png" id="see_the_impact" />
-    </div>
-    <div id="left_side">
-	<div id="our_mission">
-	      <h2>Our Mission.</h2>
-	      Give people a way to show support for a wide variety of things such as: causes, social issues, charities, even government. 
-	      But that's not all. I CARE will also reflect the most cared about topics worldwide.
+	  <%= f.submit "", :type => :image, :src => '/assets/SignIn_BTN.png', :id => 'sign_in_button' %>    <% end %>
 	</div>
-	<div id="our_hope">
-	    <h2>Our Hope</h2>
-	    Connect people through issues and gain awareness to create action.
-	</div>
-    </div>
-    <div id="right_side">
-	<h2>How It Works.</h2>
-	It's simple. Copy the ICARE code directly onto your site. 
-	That's it. From there, visitors can click onthe button to care about articles, images, or posts.
-    </div>
-    <div id="right_image">
-      <img src="/assets/RIGHT_ARROW_COPY_PASTE.png" id="copy_and_paste"/>
-
-    </div>
 
   </div>
-</div>
 
-<div id="bottom_signup">
-<hr/>
-  <div id="register_text"><span>Register for Analytics. Track how I CARE is being used on the site.</span></div>
- <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <div id="main_area">
 
-  <%= f.email_field :email %>
+    <img src="/assets/Header_Image.png" id="main_image" />
+    <div id="subheader">A new way to show support when 'Like' isn't the right word.</div>
+    <img src="/assets/HERO_IMAGE_1.png" id="hero_image" />
 
-  <%= f.password_field :password %>
+    <div id="info_container">
+      <div id="left_image">
+	<img src="/assets/LEFT_ARROW_SEE.png" id="see_the_impact" />
+      </div>
+      <div id="left_side">
+	  <div id="our_mission">
+		<h2>Our Mission.</h2>
+		Give people a way to show support for a wide variety of things such as: causes, social issues, charities, even government. 
+		But that's not all. I CARE will also reflect the most cared about topics worldwide.
+	  </div>
+	  <div id="our_hope">
+	      <h2>Our Hope</h2>
+	      Connect people through issues and gain awareness to create action.
+	  </div>
+      </div>
+      <div id="right_side">
+	  <h2>How It Works.</h2>
+	  It's simple. Copy the ICARE code directly onto your site. 
+	  That's it. From there, visitors can click onthe button to care about articles, images, or posts.
+      </div>
+      <div id="right_image">
+	<img src="/assets/RIGHT_ARROW_COPY_PASTE.png" id="copy_and_paste"/>
 
-  <%= f.password_field :password_confirmation %>
+      </div>
 
- <%= f.submit "", :type => :image, :src => '/assets/SignUp_BTN.png' %>
-<% end %>
+    </div>
+  </div>
+
+  <div id="bottom_signup">
+  <hr/>
+    <div id="register_text"><span><b>Register for Analytics</b>. Track how <b>I CARE</b> is being used on the site.</span></div>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <%= f.email_field :email %>
+
+    <%= f.password_field :password %>
+
+    <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "", :type => :image, :src => '/assets/SignUp_BTN.png', :id => 'sign_up_button' %>
+  <% end %>
+  </div>
 </div>
