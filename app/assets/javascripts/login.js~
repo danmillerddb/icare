@@ -41,7 +41,7 @@ $(document).ready( function() {
   });
   
    $('#user_email').blur(function() {
-      if( $('#user_email').val() == '' ) {
+      if($('#user_email').val() == 'Email' || $('#user_email').val() == '' ) {
 	  
 	  //$('#user_email').removeClass('darkgreytext').addClass('blacktext');
 	$('#user_email').val('email');

@@ -49,7 +49,7 @@ div#topbar div#signin
   position: relative;
 }
 
-div#topbar div#signin input#email, div#topbar div#signin input#password
+div#topbar div#signin input#user_email, div#topbar div#signin input#user_password, div#topbar div#signin input#password-clear
 {
   margin-right: 10px;
   position: relative;
@@ -111,7 +111,7 @@ div#info_container
 
 div#register_text
 {
-  margin-bottom: 16x;
+  margin-bottom: 16px;
 }
 
 div#info_container div#left_side

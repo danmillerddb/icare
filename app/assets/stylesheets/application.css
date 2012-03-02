@@ -49,7 +49,7 @@ div#topbar div#signin
   position: relative;
 }
 
-div#topbar div#signin input#email, div#topbar div#signin input#password
+div#topbar div#signin input#user_email, div#topbar div#signin input#user_password, div#topbar div#signin input#password-clear
 {
   margin-right: 10px;
   position: relative;
@@ -195,19 +195,19 @@ div#bottom_signup
   margin: auto;
 }
 
-div#bottom_signup input#user_email
+div#bottom_signup input#signup_user_email
 {
   margin-right: 15px;
   background-color: #caf2ec;
 }
 
-div#bottom_signup input#user_password
+div#bottom_signup input#signup_user_password
 {
   margin-right: 15px;
   background-color: #caf2ec;
 }
 
-div#bottom_signup input#user_password_confirmation
+div#bottom_signup input#signup_user_password_confirmation
 {
   
   background-color: #caf2ec;
