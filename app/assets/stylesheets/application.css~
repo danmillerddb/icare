@@ -195,22 +195,42 @@ div#bottom_signup
   margin: auto;
 }
 
-div#bottom_signup input#user_email
+div#bottom_signup input#signup_user_email
 {
-  margin-right: 15px;
+  margin-right: 14px;
+  width: 223px;
   background-color: #caf2ec;
 }
 
-div#bottom_signup input#user_password
+div#bottom_signup input#password-clear-create
 {
-  margin-right: 15px;
+  margin-right: 14px;
+  width: 223px;
   background-color: #caf2ec;
 }
 
-div#bottom_signup input#user_password_confirmation
+div#bottom_signup input#password-clear-confirm
+{
+  margin-right: 14px;
+  width: 223px;
+  background-color: #caf2ec;
+}
+
+
+div#bottom_signup input#signup_user_password
+{
+  margin-right: 15px;
+  background-color: #caf2ec;
+    width: 223px;
+
+}
+
+div#bottom_signup input#signup_user_password_confirmation
 {
   
   background-color: #caf2ec;
+    width: 223px;
+
 }
 
 

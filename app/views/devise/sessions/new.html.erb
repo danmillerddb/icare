@@ -47,16 +47,18 @@
 
   <div id="bottom_signup">
   <hr/>
-    <div id="register_text"><b>Register for Analytics</b>. Track how <b>I CARE</b> is being used on the site.</div></div>
+    <div id="register_text"><b>Register for Analytics</b>. Track how <b>I CARE</b> is being used on the site.</div>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
-    <%= f.email_field :email, :id => 'signup_user_email' %>
+    <%= f.email_field :email, :id => 'signup_user_email', :value => 'email' %>
 
-    <%= f.password_field :password, :id => 'signup_user_password' %>
-    
-    <%= f.password_field :password_confirmation, :id => 'signup_user_password_confirmation' %>
-
+    <%= f.password_field :password, :id => 'signup_user_password', :style => 'display:none;' %>
+     <input id="password-clear-create" type="text" value="create password">
+	   
+    <%= f.password_field :password_confirmation, :id => 'signup_user_password_confirmation', :style => 'display: none;' %>
+     <input id="password-clear-confirm" type="text" value="confirm password"><br/>
+	   
   <%= f.submit "", :type => :image, :src => '/assets/SignUp_BTN.png', :id => 'sign_up_button' %>
   <% end %>
   </div>

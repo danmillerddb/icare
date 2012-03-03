@@ -11,6 +11,22 @@ $(document).ready( function() {
 
       $('#user_password').focus();
   });
+   $('#password-clear-create').focus(function() {
+      $('#password-clear-create').hide();
+      $('#signup_user_password').show();
+    // setCaretPosition(document.getElementById('user_password'),0);
+
+      $('#signup_user_password').focus();
+  });
+   
+    $('#password-clear-confirm').focus(function() {
+      $('#password-clear-confirm').hide();
+      $('#signup_user_password_confirmation').show();
+    // setCaretPosition(document.getElementById('user_password'),0);
+
+      $('#signup_user_password_confirmation').focus();
+  });
+  
 
   $('#user_password').blur(function() {
       if($('#user_password').val() == '') {
@@ -19,6 +35,21 @@ $(document).ready( function() {
 	  $('#user_password').hide();
       }
   });
+  $('#signup_user_password').blur(function() {
+      if($('#signup_user_password').val() == '') {
+	  $('#password-clear-create').show();
+	  
+	  $('#signup_user_password').hide();
+      }
+  });
+    $('#signup_user_password_confirmation').blur(function() {
+      if($('#signup_user_password').val() == '') {
+	  $('#password-clear-confirm').show();
+	  
+	  $('#signup_user_password_confirmation').hide();
+      }
+  });
+  
   
   $('#user_email').one("keypress", function () {
     // $('#user_email').removeClass('darkgreytext').addClass('blacktext');
@@ -31,6 +62,15 @@ $(document).ready( function() {
 	   
 	 //$('#user_email').removeClass('blacktext').addClass('darkgreytext');
          $('#user_email').val('');
+      }
+  });
+  
+    $('#signup_user_email').focus(function() {
+   
+      if($('#signup_user_email').val() == 'email' || $('#signup_user_email').val() == '' ) {
+	   
+	 //$('#user_email').removeClass('blacktext').addClass('darkgreytext');
+         $('#signup_user_email').val('');
       }
   });
   
@@ -47,4 +87,13 @@ $(document).ready( function() {
 	$('#user_email').val('email');
       }
   });
+   
+   $('#signup_user_email').blur(function() {
+      if( $('#signup_user_email').val() == '' ) {
+	  
+	  //$('#user_email').removeClass('darkgreytext').addClass('blacktext');
+	$('#signup_user_email').val('email');
+      }
+  });
+   
 });

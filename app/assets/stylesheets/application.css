@@ -32,6 +32,7 @@ div#signin input#email, div#signin input#password
 input#sign_up_button
 {
   float: right;
+  margin-right: 10px;
 }
 
 input#sign_in_button
@@ -197,20 +198,40 @@ div#bottom_signup
 
 div#bottom_signup input#signup_user_email
 {
-  margin-right: 15px;
+  margin-right: 14px;
+  width: 223px;
   background-color: #caf2ec;
 }
+
+div#bottom_signup input#password-clear-create
+{
+  margin-right: 14px;
+  width: 223px;
+  background-color: #caf2ec;
+}
+
+div#bottom_signup input#password-clear-confirm
+{
+  margin-right: 14px;
+  width: 223px;
+  background-color: #caf2ec;
+}
+
 
 div#bottom_signup input#signup_user_password
 {
   margin-right: 15px;
   background-color: #caf2ec;
+    width: 223px;
+
 }
 
 div#bottom_signup input#signup_user_password_confirmation
 {
   
   background-color: #caf2ec;
+    width: 223px;
+
 }
 
 
