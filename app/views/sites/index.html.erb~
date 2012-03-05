@@ -1,6 +1,8 @@
+<%= link_to 'Sign Out', destroy_user_session_path %>
+
 <h1>Listing sites</h1>
 
-<h2>Sites you support</h2>
+<h2>Sites you run</h2>
 <table >
   <tr>
     <th>Name</th>

@@ -1,12 +1,7 @@
 class Support
   include Mongoid::Document
-  embeds_one :user
+  embedded_in :site
   
-  field :join_date, type: DateTime
-  field :url, type: String
-  field :description, type: String
-  field :supporters, type: Array
-  field :count, type: Integer 
-  belongs_to :user
-  embeds_many :supports
+  field :join_date, type: DateTime, default: Time.now
+  field :ip_address
 end

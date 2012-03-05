@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => ['impress']
   # GET /sites
   # GET /sites.json
   def index
@@ -16,12 +16,25 @@ class SitesController < ApplicationController
       @user = User.find(params[:owner])
       @site = @user.sites.find(params[:site_id]) # :owner = user's id
  
-    
+=begin    
     if not current_user.voted?(@site)
-       current_user.vote(@site, :up) 
+       current_user.vote(@site, :up)
+              
       @support = @site.supports.new
+      
+      @support.ip_address = request.env['REMOTE_ADDR'] if request.env['REMOTE_ADDR'].present?
       @support.save
     end    
+=end   
+       
+       @site.votes['count'] += 1
+       @site.save
+       @support = @site.supports.new
+      
+      @support.ip_address = request.env['REMOTE_ADDR'] if request.env['REMOTE_ADDR'].present?
+      @support.save
+        
+  
   
     respond_to do |format|
       #format.html # show.html.erb
