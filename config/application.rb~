@@ -14,7 +14,7 @@ module Icare
     config.middleware.use Rack::Cors do
       allow do
         origins '*'
-        resource %/*/,
+        resource /*/,
           :headers => ['Origin', 'Accept', 'Content-Type'],
           :methods => [:put, :delete, :get, :post]
       end

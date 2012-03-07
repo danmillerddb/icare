@@ -1,31 +1,41 @@
-<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
 
-<h1>Listing sites</h1>
 
-<h2>Sites you run</h2>
-<table >
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>URL</th>
-    <th>User ID</th>
-    <th>Site ID</th>
-  </tr>
+<div id="wrapper">
+  <div id="topbar">
+      <span id="header_email"><span id="account_header">Account: </span><%= current_user.email %></span>
+      <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :id => 'signout_link' %>
+      
+  </div>
 
-<% @sites.each do |site| %>
-  <tr>
-    <td><%= site.name %></td>
-    <td><%= site.description %></td>
-    <td><%= site.url %></td>
-    <td><%= current_user.id %></td>
-    <td><%= site.id %></td>
-    <td><%= link_to 'Show', site %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_site_path(site) %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Delete', site, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div id="main_area">
+
  
+    <table id="sites_table">
+      <tr>
+	<th>Care Topic</th>
+	<th></th>
+	<th></th>
+	<th>Clicks to Date</th>
+      </tr>
+
+    <% @sites.each do |site| %>
+      <tr>
+	<td><%= site.name %></td>
+	<td><%= site.description %></td>
+	<td><%= site.url %></td>
+	<td><%= link_to 'Show', site %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_site_path(site) %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Delete', site, confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
     
-<% end %>
-</table>
+	
+    <% end %>
+    </table>
 
-<br />
+    <br />
 
-<%= link_to 'New Site', new_site_path %>
+    <%= link_to 'New Site', new_site_path %>
+    
+  </div>
+
+ 
+
+

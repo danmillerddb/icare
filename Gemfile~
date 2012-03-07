@@ -9,8 +9,8 @@ gem 'sqlite3'
 gem 'bson_ext'
 gem 'mongoid'
 gem 'devise'
-
-
+gem 'voteable_mongo'
+gem 'omniauth-facebook'
 
 gem 'jquery-rails'
 

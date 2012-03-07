@@ -17,10 +17,26 @@ div#topbar
   width: 100%;
   position: absolute;
   left: 0px;
+  top: 0px;
   background-color: #c8f0e9;
   text-align: right;
   vertical-align: middle;
 }
+
+div#main_area table#sites_table
+{
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+}
+
+div#main_area table#sites_table th
+{
+  background-color: #a9dbd2;
+}
+
+
 
 div#signin input#email, div#signin input#password
 {
@@ -67,6 +83,11 @@ div#main_area
   height: 100%;
 }
 
+div#topbar a#signout_link
+{
+  margin-right: 9px;
+  margin-top: 10px;
+}
 
 
 img#main_image

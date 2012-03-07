@@ -10,7 +10,8 @@ gem 'bson_ext'
 gem 'mongoid'
 gem 'devise'
 gem 'voteable_mongo'
-
+gem 'omniauth-facebook'
+gem 'rack-cors', :require => 'rack/cors'
 
 gem 'jquery-rails'
 

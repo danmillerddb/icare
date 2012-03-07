@@ -19,18 +19,40 @@
 </p>
 <p>
   <b>To Put Button On Your Site, copy and paste the following code:</b><br/>
-  <textarea id="copytext" style="width:500px;" rows="10"><script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script><script language="javascript">
+  <textarea id="copytext" style="width:500px;" rows="10">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+<script language="javascript">
 $(document).ready( function() {
 
     $('a#icare_button_link').click( function() {
 
 	$.get($('a#icare_button_link').attr('href'), function(data) {
-	  // $('').html(data);
+	  // $('').html(data);]
+	    //$(location).attr('href','http://172.30.11.22:3003/auth/facebook');
+	    
 	    return false;
 	}).error(function() { 
 	      $(location).attr('http://172.30.11.22:3003/'); 
 	});
 
+	$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	
+		$( "#dialog-confirm" ).dialog({
+			resizable: false,
+			height:140,
+			modal: true,
+			buttons: {
+				"Delete all items": function() {
+					$( this ).dialog( "close" );
+				},
+				Cancel: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+	
 	return false;
        
     });
