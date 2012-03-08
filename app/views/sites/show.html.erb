@@ -28,22 +28,24 @@ $(document).ready( function() {
     $('a#icare_button_link').click( function() {
 
 	$.get($('a#icare_button_link').attr('href'), function(data) {
-	  // $('').html(data);]
-	    //$(location).attr('href','http://172.30.11.22:3003/auth/facebook');
+	    $(location).attr('href','http://172.30.11.22:3003/auth/facebook');
 	    
-	    return false;
 	}).error(function() { 
 	      $(location).attr('http://172.30.11.22:3003/'); 
 	});
 
-	
 	
 	return false;
        
     });
 });
 
-</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= @site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a></textarea>
+</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= @site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a>
+
+<div id="dialog-confirm" title="Thank you!" style="display:none">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Would you like to share this on Facebook?</p>
+</div>
+</textarea>
 </p>
 
 Current supporter count: <%= @vote_count %><br/><br/>

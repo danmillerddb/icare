@@ -21,7 +21,6 @@
   <b>To Put Button On Your Site, copy and paste the following code:</b><br/>
   <textarea id="copytext" style="width:500px;" rows="10">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 
 <script language="javascript">
 $(document).ready( function() {
@@ -32,33 +31,22 @@ $(document).ready( function() {
 	  // $('').html(data);]
 	    //$(location).attr('href','http://172.30.11.22:3003/auth/facebook');
 	    
-	    return false;
 	}).error(function() { 
 	      $(location).attr('http://172.30.11.22:3003/'); 
 	});
 
-	$( "#dialog:ui-dialog" ).dialog( "destroy" );
-	
-		$( "#dialog-confirm" ).dialog({
-			resizable: false,
-			height:140,
-			modal: true,
-			buttons: {
-				"Delete all items": function() {
-					$( this ).dialog( "close" );
-				},
-				Cancel: function() {
-					$( this ).dialog( "close" );
-				}
-			}
-		});
 	
 	return false;
        
     });
 });
 
-</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= @site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a></textarea>
+</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= @site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a>
+
+<div id="dialog-confirm" title="Thank you!" style="display:none">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Would you like to share this on Facebook?</p>
+</div>
+</textarea>
 </p>
 
 Current supporter count: <%= @vote_count %><br/><br/>

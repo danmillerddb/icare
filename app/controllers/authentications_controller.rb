@@ -48,7 +48,7 @@ class AuthenticationsController < ApplicationController
    
    
    redirect_to 'https://graph.facebook.com/' + request.env["omniauth.auth"]["uid"] + '/feed?access_token=' + request.env["omniauth.auth"]["credentials"]["token"] + '&message=apptest_icare_tony'
-
+   
      
     
   end

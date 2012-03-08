@@ -28,7 +28,16 @@ div#main_area table#sites_table
   background-color: #ffffff;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 150px;
+  margin-top: 10px;
+  width: 600px;
+}
+
+div#main_area div#instructions
+{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 120px;
+  width: 600px;
 }
 
 div#main_area table#sites_table th
@@ -236,6 +245,15 @@ div#bottom_signup input#password-clear-confirm
   margin-right: 14px;
   width: 223px;
   background-color: #caf2ec;
+}
+
+div#topbar img#icare_logo
+{
+  position: relative;
+  float: left;
+  margin-left: 30px;
+  margin-top: 10px;
+  vertical-align: bottom;
 }
 
 

@@ -2,14 +2,22 @@
 
 <div id="wrapper">
   <div id="topbar">
+<img src="/assets/I_CARE_Logo.png" id="icare_logo"/>
       <span id="header_email"><span id="account_header">Account: </span><%= current_user.email %></span>
       <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :id => 'signout_link' %>
       
   </div>
 
   <div id="main_area">
-
- 
+    <div id="instructions">
+      <div>Two Steps to Register.</div>
+	<div>
+	  One, enter keywords that relate to a topic you want people to care about (Example: Polar Bears)
+	  Two, enter the URL where the button will be hosted<br/>
+	  <i>*Check back for a full report reflecting your button(s) usage.</i>
+	</div>
+      
+    </div>
     <table id="sites_table">
       <tr>
 	<th>Care Topic</th>

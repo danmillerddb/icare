@@ -1,5 +1,6 @@
 <div id="wrapper">
   <div id="topbar">
+      <img src="/assets/I_CARE_Logo.png" id="icare_logo"/>
       <div id="signin">
 	  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 	    <%= f.email_field :email, :id => 'user_email', :value => 'email' %>
@@ -56,8 +57,8 @@
     <%= f.password_field :password, :id => 'signup_user_password', :style => 'display:none;' %>
      <input id="password-clear-create" type="text" value="create password">
 	   
-    <%= f.password_field :password_confirmation, :id => 'signup_user_password_confirmation', :style => 'display: none;' %><br/>
-     <input id="password-clear-confirm" type="text" value="confirm password">
+    <%= f.password_field :password_confirmation, :id => 'signup_user_password_confirmation', :style => 'display: none;' %>
+     <input id="password-clear-confirm" type="text" value="confirm password"><br/>
 	   
   <%= f.submit "", :type => :image, :src => '/assets/SignUp_BTN.png', :id => 'sign_up_button' %>
   <% end %>
