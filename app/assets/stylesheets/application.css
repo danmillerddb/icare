@@ -40,12 +40,18 @@ div#main_area div#instructions
   width: 600px;
 }
 
+
+
 div#main_area table#sites_table th
 {
   background-color: #a9dbd2;
 }
 
-
+div#manager_instructions
+{
+  float: left;
+  text-align: left;
+}
 
 div#signin input#email, div#signin input#password
 {
