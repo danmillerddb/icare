@@ -10,8 +10,8 @@
 
   <div id="main_area">
     <div id="instructions">
-      <div>Two Steps to Register.</div>
-	<div>
+      <div><img src="/assets/Reg_Title.png" id="register_header" /></div>
+	<div id="manager_instructions">
 	  One, enter keywords that relate to a topic you want people to care about (Example: Polar Bears)
 	  Two, enter the URL where the button will be hosted<br/>
 	  <i>*Check back for a full report reflecting your button(s) usage.</i>
@@ -21,27 +21,70 @@
     <table id="sites_table">
       <tr>
 	<th>Care Topic</th>
-	<th></th>
-	<th></th>
+	
 	<th>Clicks to Date</th>
       </tr>
 
     <% @sites.each do |site| %>
       <tr>
-	<td><%= site.name %></td>
-	<td><%= site.description %></td>
-	<td><%= site.url %></td>
-	<td><%= link_to 'Show', site %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_site_path(site) %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Delete', site, confirm: 'Are you sure?', method: :delete %></td>
+	<td>
+	    <div id="manager_caretopic_left">
+		<input type="textbox" id="tags_box" name="tags" value="Key Word(s)"></input><br/>
+		<input type="textbox" id="url_box" name="url" value="Enter your url"></input><br/>
+		<%= link_to image_tag('/assets/Edit_BTN.png', :border => 0), '#' %>
+	        <%= link_to image_tag('/assets/Remove_Active_BTN.png', :border => 0), site, confirm: 'Are you sure?', method: :delete %>
+		<%= link_to image_tag('/assets/HideCode_BTN.png', :border => 0), site, :class => 'hidecode_btn' %>
+		
+	    </div>
+	  <div id="manager_caretopic_right">
+	      <input type="textarea" id="description" value="Enter your description"></input>
+	  </div>
+	</td>
+	
+	<td> <%=@site.votes_count  %><br/><br/><center><%= link_to image_tag('/assets/FullReport_BTN.png', :border => 0), site %></center></td>
       </tr>
-    
+      <tr class="showcode_row">
+	<td colspan="2" >
+	  <textarea class="manager_copytext">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+		<script language="javascript">
+		$(document).ready( function() {
+
+		    $('a#icare_button_link').click( function() {
+
+			$.get($('a#icare_button_link').attr('href'), function(data) {
+			    $(location).attr('href','http://172.30.11.22:3003/auth/facebook');
+			    
+			}).error(function() { 
+			      $(location).attr('http://172.30.11.22:3003/'); 
+			});
+
+			
+			return false;
+		      
+		    });
+		});
+
+		</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= @site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a>
+
+		<div id="dialog-confirm" title="Thank you!" style="display:none">
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Would you like to share this on Facebook?</p>
+		</div>
+	  </textarea>
+	</td>
+      </tr>
 	
     <% end %>
+      <tr>
+	  <td><%= link_to image_tag('/assets/AddTopic_BTN.png', :border => 0), new_site_path %>
+	  </td>
+      </tr>
     </table>
 
     <br />
 
-    <%= link_to 'New Site', new_site_path %>
-    
+     
   </div>
 
  

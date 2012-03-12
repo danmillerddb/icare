@@ -4,7 +4,9 @@ class SitesController < ApplicationController
   # GET /sites.json
   def index
     @sites = current_user.sites.all
+    @site = current_user.sites.new
 
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @sites }

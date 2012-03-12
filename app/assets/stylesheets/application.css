@@ -29,7 +29,7 @@ div#main_area table#sites_table
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
-  width: 600px;
+  width: 800px;
 }
 
 div#main_area div#instructions
@@ -37,19 +37,54 @@ div#main_area div#instructions
   margin-left: auto;
   margin-right: auto;
   margin-top: 120px;
-  width: 600px;
+  margin-bottom: 20px;
+  width: 800px;
+  text-align: left;
 }
 
+div#manager_caretopic_left
+{
+  width: 300px;
+  float: left;
+  
+}
+
+
+div#manager_caretopic_right
+{
+  float: right;
+}
+
+div#manager_caretopic_right input
+{
+  font-size: 11px;
+  height: 60px;
+  width: 280px;
+  vertical-align: text-top;
+}
+
+
+div#manager_caretopic_left input
+{
+  width: 250px;
+  font-size: 11px;
+}
 
 
 div#main_area table#sites_table th
 {
   background-color: #a9dbd2;
+ 
 }
 
 div#manager_instructions
 {
   float: left;
+  text-align: left;
+}
+
+img#register_header
+{
   text-align: left;
 }
 
@@ -66,6 +101,12 @@ input#sign_up_button
   margin-right: 10px;
 }
 
+span#header_email
+{
+  clear: both;
+  margin-bottom: 5px;
+}
+
 input#sign_in_button
 {
   float: right;
@@ -73,6 +114,41 @@ input#sign_in_button
   position: relative;
 }
 
+tr.showcode_row
+{
+  background-color: #f1faf9;
+  border-top: 1px;
+  border-bottom: 1px;
+  border-left: 0px;
+  border-right: 0px;
+  border-style: solid;
+  
+}
+
+table#sites_table a:hover
+{
+  text-decoration: none;
+}
+
+table#sites_table td
+{
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+textarea.manager_copytext
+{
+  height: 85px;
+  width: 755px;
+  font-size: 11px;
+  background-color: #f1faf9;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 1px;
+  border-style: solid;
+}
 
 div#topbar div#signin
 {

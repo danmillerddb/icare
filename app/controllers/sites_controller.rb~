@@ -19,25 +19,21 @@ class SitesController < ApplicationController
 =begin    
     if not current_user.voted?(@site)
        current_user.vote(@site, :up)
-       
-       @site.votes['count'] += 1
-       @site.save
+              
       @support = @site.supports.new
       
       @support.ip_address = request.env['REMOTE_ADDR'] if request.env['REMOTE_ADDR'].present?
       @support.save
     end    
 =end   
-    if not current_user.voted?(@site)
-       current_user.vote(@site, :up)
        
        @site.votes['count'] += 1
        @site.save
-      @support = @site.supports.new
+       @support = @site.supports.new
       
       @support.ip_address = request.env['REMOTE_ADDR'] if request.env['REMOTE_ADDR'].present?
       @support.save
-    end    
+        
   
   
     respond_to do |format|

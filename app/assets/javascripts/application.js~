@@ -9,7 +9,7 @@
 //= require_tree .
 
 $(document).ready( function() {
-  $('img.hidecode_btn').click( function() {
+  $('img.Hidecode_btn').click( function() {
     $(this).closest('tr.showcode_row').hide();
     return false;
   });
