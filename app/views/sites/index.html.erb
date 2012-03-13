@@ -8,7 +8,7 @@
       
   </div>
 
-  <div id="main_area">
+  <div id="manager_main_area">
     <div id="instructions">
       <div><img src="/assets/Reg_Title.png" id="register_header" /></div>
 	<div id="manager_instructions">
@@ -29,23 +29,24 @@
       <tr>
 	<td>
 	    <div id="manager_caretopic_left">
-		<input type="textbox" id="tags_box" name="tags" value="Key Word(s)"></input><br/>
-		<input type="textbox" id="url_box" name="url" value="Enter your url"></input><br/>
-		<%= link_to image_tag('/assets/Edit_BTN.png', :border => 0), '#' %>
-	        <%= link_to image_tag('/assets/Remove_Active_BTN.png', :border => 0), site, confirm: 'Are you sure?', method: :delete %>
-		<%= link_to image_tag('/assets/HideCode_BTN.png', :class => 'hidecode_btn', :border => 0), site  %>
-		
+		<%= form_for(site) do |f| %>
+		  <input type="textbox" class="tags_box" name="tags" value="Keyword(s)"></input><br/>
+		  <input type="textbox" class="url_box" name="url" value="Enter your url"></input><br/>
+		  <%= link_to image_tag('/assets/Edit_BTN.png', :border => 0), '#' %>
+		  <%= link_to image_tag('/assets/Remove_Active_BTN.png', :border => 0), site, confirm: 'Are you sure?', method: :delete %>
+		  <%= link_to image_tag('/assets/HideCode_BTN.png', :class => 'hidecode_btn', :border => 0), site  %>
+		<% end %>
 	    </div>
 	  <div id="manager_caretopic_right">
-	      <input type="textarea" id="description" value="Enter your description"></input>
+	      <textarea class="description" name="description" >Enter your description</textarea>
 	  </div>
 	</td>
 	
-	<td> <%=@site.votes_count  %><br/><br/><center><%= link_to image_tag('/assets/FullReport_BTN.png', :border => 0), site %></center></td>
+	<td class="clicks_to_date_column"> <%= site.votes_count  %><br/><br/><center><%= link_to image_tag('/assets/FullReport_BTN.png', :border => 0), site %></center></td>
       </tr>
       <tr class="showcode_row">
 	<td colspan="2" >
-	  <textarea class="manager_copytext">
+	  <textarea class="manager_copytext" >
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
 		<script language="javascript">
@@ -66,7 +67,7 @@
 		    });
 		});
 
-		</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= @site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a>
+		</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a>
 
 		<div id="dialog-confirm" title="Thank you!" style="display:none">
 			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Would you like to share this on Facebook?</p>
@@ -76,8 +77,8 @@
       </tr>
 	
     <% end %>
-      <tr>
-	  <td><%= link_to image_tag('/assets/AddTopic_BTN.png', :border => 0), new_site_path %>
+      <tr id="last_row">
+	  <td>&nbsp;&nbsp;&nbsp;<%= link_to image_tag('/assets/AddTopic_BTN.png', :border => 0), new_site_path %>
 	  </td>
       </tr>
     </table>

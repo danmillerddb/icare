@@ -9,9 +9,37 @@
 //= require_tree .
 
 $(document).ready( function() {
-  $('img.Hidecode_btn').click( function() {
-    $(this).closest('tr.showcode_row').hide();
+  $('img.hidecode_btn').click( function() {
+    $(this).closest('tr').next('tr.showcode_row').toggle();
     return false;
   });
   
+  $('input.tags_box, input.url_box, textarea.description').focus(function() {
+    if ($(this).val() == 'Keyword(s)' || $(this).val() == 'Enter your url' || $(this).val() == 'Enter your description')
+      $(this).val('');
+  });
+  
+  $('input.tags_box').blur(function() {
+    if ($(this).val() == '')
+      $(this).val('Keyword(s)');
+  });
+  
+  $('input.url_box').blur(function() {
+    if ($(this).val() == '')
+      $(this).val('Enter your url');
+  });
+  
+   $('textarea.description').blur(function() {
+    if ($(this).val() == '')
+      $(this).val('Enter your description');
+  });
+   
+   $('textarea.manager_copytext').focus(function (
+     $(this).select();
+     $(this).mouseup(function () {
+	$(this).unbind('mouseup');
+	return false;
+    });
+  });
+   
 });
