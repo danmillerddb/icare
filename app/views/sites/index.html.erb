@@ -34,7 +34,7 @@
 		
 		  <%= f.text_field :tags, :class => 'tags_box', :disabled => 'disabled' %><br/>
 		  <%= f.text_field :url, :class => 'url_box', :disabled => 'disabled' %><br/>
-		  <%= link_to image_tag('/assets/Save_BTN.png',  :border => 0), site, :class => 'save_btn',  %>
+		  <%= f.submit '' %>		  
 		  <%= link_to image_tag('/assets/Edit_BTN.png', :border => 0), '#', :class => 'edit_btn' %>
 		  <%= link_to image_tag('/assets/Remove_Active_BTN.png', :border => 0), site, confirm: 'Are you sure?', method: :delete %>
 		  <%= link_to image_tag('/assets/HideCode_BTN.png', :class => 'hidecode_btn', :border => 0), '#'  %>
@@ -47,7 +47,7 @@
 	  <% end %>
 	</td>
 	
-	<td class="clicks_to_date_column"> <%= site.votes_count  %><br/><br/><center><%= link_to image_tag('/assets/FullReport_BTN.png', :border => 0), site %></center></td>
+	<td class="clicks_to_date_column"> <%= site.votes_count  %><br/><br/><center><%= image_tag('/assets/FullReport_BTN.png', :border => 0) %></center></td>
       </tr>
       <tr class="showcode_row">
 	<td colspan="2" >

@@ -5,7 +5,8 @@ class SitesController < ApplicationController
   def index
     @sites = current_user.sites.all
     @site = current_user.sites.new
-
+    
+  
     
     respond_to do |format|
       format.html # index.html.erb
@@ -76,6 +77,9 @@ class SitesController < ApplicationController
   # POST /sites
   # POST /sites.json
   def create
+  #  @site = params[:site]
+  #  @site['tags'] = []
+  #  @site['tags'] = params[:site][:tags].split(' ')
     @site = current_user.sites.new(params[:site])
 
     respond_to do |format|
@@ -93,10 +97,14 @@ class SitesController < ApplicationController
   # PUT /sites/1.json
   def update
     @site = current_user.sites.find(params[:id])
-
+    
+   # @site_temp['tags'] = []
+   # @site_updated['tags'] = params[:site][:tags].split(' ')
+    
+    
     respond_to do |format|
       if @site.update_attributes(params[:site])
-        format.html { redirect_to @site, notice: 'Site was successfully updated.' }
+        format.html { redirect_to sites_url }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -12,6 +12,7 @@ gem 'devise'
 gem 'voteable_mongo'
 gem 'omniauth-facebook'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'mongoid_taggable'
 
 gem 'jquery-rails'
 

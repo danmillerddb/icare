@@ -64,6 +64,7 @@ GEM
       activemodel (~> 3.1)
       mongo (~> 1.3)
       tzinfo (~> 0.3.22)
+    mongoid_taggable (0.1.7)
     multi_json (1.0.4)
     multipart-post (1.1.4)
     oauth2 (0.5.2)
@@ -133,6 +134,7 @@ DEPENDENCIES
   devise
   jquery-rails
   mongoid
+  mongoid_taggable
   omniauth-facebook
   rack-cors
   rails (= 3.1.3)

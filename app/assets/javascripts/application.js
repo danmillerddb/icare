@@ -53,15 +53,15 @@ $(document).ready( function() {
    
    $('a.edit_btn').click(function() {
      $(this).hide();
-     $(this).parent().find('a.save_btn').show();
+     $(this).parent().find('input[type=submit]').show();
      $(this).parent().parent().find('input, textarea').removeAttr('disabled');
    });
    
-   $('a.save_btn').click(function() {
+   $('input[type=submit]').click(function() {
      $(this).hide();
      $(this).parent().find('a.edit_btn').show();
-     $(this).parent().parent().find('input, textarea').attr('disabled','disabled');
- 
+   //  $(this).parent().parent().find('input, textarea').attr('disabled','disabled');
+    // $(this).trigger('click');
      
   });
    

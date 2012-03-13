@@ -201,6 +201,19 @@ a.save_btn
 {
   display: none;
 }
+
+div#manager_caretopic_left input[type="submit"]
+{
+  background:url('/assets/Save_BTN.png') no-repeat;
+    cursor:pointer;
+    width: 57px;
+    height: 24px;
+    border: none;
+    display: none;
+    position: relative;
+    top: -4px;
+}
+
 img.seecode_btn
 {
   display:none;

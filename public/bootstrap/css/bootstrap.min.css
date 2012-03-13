@@ -40,7 +40,7 @@ background-image: linear-gradient(top, #CAF2EC 0%, #C8F0E9 100%);
 
 
 a{color:#0088cc;text-decoration:none;}
-a:hover{color:#005580;text-decoration:underline;}
+a:hover{color:#005580;}
 .row{margin-left:-20px;*zoom:1;}.row:before,.row:after{display:table;content:"";}
 .row:after{clear:both;}
 [class*="span"]{float:left;margin-left:20px;}
