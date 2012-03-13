@@ -11,6 +11,15 @@
 $(document).ready( function() {
   $('img.hidecode_btn').click( function() {
     $(this).closest('tr').next('tr.showcode_row').toggle();
+    $(this).hide();
+    $(this).parent().parent().find('img.seecode_btn').show();
+    return false;
+  });
+  
+   $('img.seecode_btn').click( function() {
+    $(this).closest('tr').next('tr.showcode_row').toggle();
+    $(this).hide();
+    $(this).parent().parent().find('img.hidecode_btn').show();
     return false;
   });
   
@@ -41,5 +50,20 @@ $(document).ready( function() {
 	return false;
     });
   });
+   
+   $('a.edit_btn').click(function() {
+     $(this).hide();
+     $(this).parent().find('a.save_btn').show();
+     $(this).parent().parent().find('input, textarea').removeAttr('disabled');
+   });
+   
+   $('a.save_btn').click(function() {
+     $(this).hide();
+     $(this).parent().find('a.edit_btn').show();
+     $(this).parent().parent().find('input, textarea').attr('disabled','disabled');
+ 
+     
+  });
+   
    
 });

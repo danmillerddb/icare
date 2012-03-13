@@ -26,20 +26,25 @@
       </tr>
 
     <% @sites.each do |site| %>
+	
       <tr>
 	<td>
+	    <%= form_for(site) do |f| %>
 	    <div id="manager_caretopic_left">
-		<%= form_for(site) do |f| %>
-		  <input type="textbox" class="tags_box" name="tags" value="Keyword(s)"></input><br/>
-		  <input type="textbox" class="url_box" name="url" value="Enter your url"></input><br/>
-		  <%= link_to image_tag('/assets/Edit_BTN.png', :border => 0), '#' %>
+		
+		  <%= f.text_field :tags, :class => 'tags_box', :disabled => 'disabled' %><br/>
+		  <%= f.text_field :url, :class => 'url_box', :disabled => 'disabled' %><br/>
+		  <%= link_to image_tag('/assets/Save_BTN.png',  :border => 0), site, :class => 'save_btn',  %>
+		  <%= link_to image_tag('/assets/Edit_BTN.png', :border => 0), '#', :class => 'edit_btn' %>
 		  <%= link_to image_tag('/assets/Remove_Active_BTN.png', :border => 0), site, confirm: 'Are you sure?', method: :delete %>
-		  <%= link_to image_tag('/assets/HideCode_BTN.png', :class => 'hidecode_btn', :border => 0), site  %>
-		<% end %>
+		  <%= link_to image_tag('/assets/HideCode_BTN.png', :class => 'hidecode_btn', :border => 0), '#'  %>
+		 <%= link_to image_tag('/assets/SeeCode_BTN.png', :class => 'seecode_btn', :border => 0), '#'  %>
+				
 	    </div>
 	  <div id="manager_caretopic_right">
-	      <textarea class="description" name="description" >Enter your description</textarea>
+	      <%= f.text_area :description, :class => 'description', :disabled => 'disabled' %>
 	  </div>
+	  <% end %>
 	</td>
 	
 	<td class="clicks_to_date_column"> <%= site.votes_count  %><br/><br/><center><%= link_to image_tag('/assets/FullReport_BTN.png', :border => 0), site %></center></td>
@@ -48,19 +53,33 @@
 	<td colspan="2" >
 	  <textarea class="manager_copytext" >
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 		<script language="javascript">
 		$(document).ready( function() {
 
 		    $('a#icare_button_link').click( function() {
 
 			$.get($('a#icare_button_link').attr('href'), function(data) {
-			    $(location).attr('href','http://172.30.11.22:3003/auth/facebook');
-			    
+			
 			}).error(function() { 
 			      $(location).attr('http://172.30.11.22:3003/'); 
 			});
-
+				  // a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+			    $( "#dialog:ui-dialog" ).dialog( "destroy" );
+		    
+			    $( "#dialog-confirm" ).dialog({
+				    resizable: false,
+				    height:140,
+				    modal: true,
+				    buttons: {
+					    "Post to Facebook": function() {
+						    $( this ).dialog( "close" );
+					    },
+					    "I will, but not right now": function() {
+						    $( this ).dialog( "close" );
+					    }
+				    }
+			    });    
 			
 			return false;
 		      

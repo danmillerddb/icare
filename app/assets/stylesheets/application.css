@@ -193,6 +193,20 @@ textarea.description
   float:left;
 }
 
+input[disabled='disabled'] {
+  background-color: #cce2e2;
+}
+
+a.save_btn
+{
+  display: none;
+}
+img.seecode_btn
+{
+  display:none;
+}
+
+
 
 div#topbar div#signin
 {

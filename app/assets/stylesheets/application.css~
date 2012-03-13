@@ -52,13 +52,11 @@ div#manager_caretopic_left
 
 span#header_email
 {
-    font-size: 12px;
     color: #8aa09e;
 }
 
 span#account_header
 {
-    font-size: 14px;
     color: #6fa1a0;
 }
 
@@ -193,6 +191,15 @@ textarea.description
   width: 240px;
   font-size: 11px;
   float:left;
+}
+
+input[disabled='disabled'] {
+  background-color: #cce2e2;
+}
+
+a.save_btn
+{
+  display: none;
 }
 
 

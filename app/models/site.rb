@@ -6,6 +6,7 @@ class Site
   field :url, type: String
   field :description, type: String
   field :supporters, type: Array
+  field :tags, type: Array
   field :count, type: Integer 
   belongs_to :user
   embeds_many :supports
