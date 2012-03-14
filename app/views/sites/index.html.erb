@@ -30,7 +30,7 @@
       <tr>
 	<td>
 	    <%= form_for(site) do |f| %>
-	    <div id="manager_caretopic_left">
+	    <div class="manager_caretopic_left">
 		
 		  <%= f.text_field :tags, :class => 'tags_box', :disabled => 'disabled' %><br/>
 		  <%= f.text_field :url, :class => 'url_box', :disabled => 'disabled' %><br/>
@@ -41,7 +41,7 @@
 		 <%= link_to image_tag('/assets/SeeCode_BTN.png', :class => 'seecode_btn', :border => 0), '#'  %>
 				
 	    </div>
-	  <div id="manager_caretopic_right">
+	  <div class="manager_caretopic_right">
 	      <%= f.text_area :description, :class => 'description', :disabled => 'disabled' %>
 	  </div>
 	  <% end %>
@@ -64,7 +64,6 @@
 			}).error(function() { 
 			      $(location).attr('http://172.30.11.22:3003/'); 
 			});
-				  // a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
 			    $( "#dialog:ui-dialog" ).dialog( "destroy" );
 		    
 			    $( "#dialog-confirm" ).dialog({
@@ -96,8 +95,27 @@
       </tr>
 	
     <% end %>
+      <tr id="new_topic_row">
+	<td>
+	    <%= form_for(@site) do |f| %>
+		<div class="manager_caretopic_left" id="new_caretopic">
+		    
+		      <%= f.text_field :tags, :class => 'tags_box', :value => 'Keyword(s)'  %><br/>
+		      <%= f.text_field :url, :class => 'url_box', :value => 'Enter your url' %><br/>
+		      <%= f.submit '' %>		  
+		      
+				    
+		</div>
+		<div class="manager_caretopic_right">
+		    <%= f.text_area :description, :class => 'description', :value => 'Enter your description' %>
+		</div>
+	  <% end %>
+	</td>
+	
+	<td class="clicks_to_date_column"></td>
+      </tr>
       <tr id="last_row">
-	  <td>&nbsp;&nbsp;&nbsp;<%= link_to image_tag('/assets/AddTopic_BTN.png', :border => 0), new_site_path %>
+	  <td>&nbsp;&nbsp;&nbsp;<%= link_to image_tag('/assets/AddTopic_BTN.png', :border => 0), '#', :id => 'add_topic_btn' %>
 	  </td>
       </tr>
     </table>

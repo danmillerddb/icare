@@ -28,7 +28,9 @@ div#manager_main_area table#sites_table
   background-color: #ffffff;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
+  margin-top: 30px;
+  position: relative;
+  top: 15px;
   width: 800px;
 }
 
@@ -42,7 +44,7 @@ div#manager_main_area div#instructions
   text-align: left;
 }
 
-div#manager_caretopic_left
+div.manager_caretopic_left
 {
   width: 400px;
   float: left;
@@ -60,12 +62,12 @@ span#account_header
     color: #6fa1a0;
 }
 
-div#manager_caretopic_right
+div.manager_caretopic_right
 {
   float: right;
 }
 
-div#manager_caretopic_right input
+div.manager_caretopic_right input
 {
   font-size: 11px;
   height: 60px;
@@ -74,7 +76,7 @@ div#manager_caretopic_right input
 }
 
 
-div#manager_caretopic_left input
+div.manager_caretopic_left input
 {
   width: 350px;
   font-size: 11px;
@@ -202,7 +204,7 @@ a.save_btn
   display: none;
 }
 
-div#manager_caretopic_left input[type="submit"]
+div.manager_caretopic_left input[type="submit"]
 {
   background:url('/assets/Save_BTN.png') no-repeat;
     cursor:pointer;
@@ -211,7 +213,19 @@ div#manager_caretopic_left input[type="submit"]
     border: none;
     display: none;
     position: relative;
-    top: -4px;
+    top: -5px;
+}
+
+div#new_caretopic input[type="submit"]
+{
+  display: inline-block;
+  position: relative;
+  left: -55px;
+}
+
+tr#new_topic_row
+{
+  display:none;
 }
 
 img.seecode_btn

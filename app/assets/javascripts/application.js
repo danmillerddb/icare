@@ -65,5 +65,10 @@ $(document).ready( function() {
      
   });
    
+   $('a#add_topic_btn').click(function() {
+    $('tr#new_topic_row').slideDown(6000);
+     
+  });
+   
    
 });
