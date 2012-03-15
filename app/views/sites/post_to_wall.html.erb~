@@ -13,7 +13,7 @@ $(document).ready( function() {
     url += 'redirect_uri=http://www.example.com/response';
    
    //window.location.replace('https://www.facebook.com/dialog/feed?app_id=123050457758183&link=https://developers.facebook.com/docs/reference/dialogs/&picture=http://fbrell.com/f8.jpg&name=Facebook%20Dialogs&caption=Reference%20Documentation&%20description=Using%20Dialogs%20to%20interact%20with%20users.&message=Facebook%20Dialogs%20are%20so%20easy!&%20redirect_uri=http://www.example.com/response');
-  window.location.replace('https://www.facebook.com/dialog/feed?app_id=363753320314028&link=<%=  %>&picture=http://fbrell.com/f8.jpg&name=Facebook%20Dialogs&caption=Reference%20Documentation&%20description=Using%20Dialogs%20to%20interact%20with%20users.&message=Facebook%20Dialogs%20are%20so%20easy!&%20redirect_uri=http://172.30.11.22:3003/');
+  window.location.replace('https://www.facebook.com/dialog/feed?app_id=363753320314028&' + document.referrer + '&picture=http://fbrell.com/f8.jpg&name=Facebook%20Dialogs&caption=Reference%20Documentation&%20description=Using%20Dialogs%20to%20interact%20with%20users.&message=Facebook%20Dialogs%20are%20so%20easy!&%20redirect_uri=http://172.30.11.22:3003/');
     
   // window.location.replace(url);
 

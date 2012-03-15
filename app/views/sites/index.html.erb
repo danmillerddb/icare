@@ -59,7 +59,6 @@
 
 		<script language="javascript">
 		$(document).ready( function() {
-		      FB.init({appId: "363753320314028", status: true, cookie: true});
 
 		    $('a#icare_button_link').click( function() {
 
@@ -77,7 +76,7 @@
 				    buttons: {
 					    "Post to Facebook": function() {
 						    $( this ).dialog( "close" );
-						    postToFeed();
+						    window.location.replace('http://172.30.11.22:3003/sites/post_to_wall?name=<%= URI.escape(site.url) %>&description=<%= URI.escape(site.description) %>');
 					    },
 					    "I will, but not right now": function() {
 						    $( this ).dialog( "close" );
@@ -89,39 +88,12 @@
 		      
 		    });
 		});
-		function postToFeed() {
-
-		    // calling the API ...
-		    var obj = {
-			/*
-		      method: 'feed',
-		      link: window.location.toString(),
-		      picture: 'http://172.30.11.22:3003/assets/ICARE_button_FINAL_03.png',
-		      name: 'I Care about <%= site.description %>',
-		      caption: 'Please support my cause!',
-		      description: 'I Care about <%= site.description %>'
-		      */
-	  method: 'feed',
-          link: 'https://developers.facebook.com/docs/reference/dialogs/',
-          picture: 'http://fbrell.com/f8.jpg',
-          name: 'Facebook Dialogs',
-          caption: 'Reference Documentation',
-          description: 'Using Dialogs to interact with users.'
-
-		    };
-
-		    function callback(response) {
-		      alert("Post ID: " + response['post_id']);
-		    }
-
-		    FB.ui(obj, callback);
-		}
+		
 		</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a>
 		
 		<div id="dialog-confirm" title="Thank you!" style="display:none">
 			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Would you like to share this on Facebook?</p>
 		</div>
-	        <div id='fb-root'></div>
 
 	  </textarea>
 	</td>
