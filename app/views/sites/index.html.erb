@@ -12,7 +12,7 @@
     <div id="instructions">
       <div><img src="/assets/Reg_Title.png" id="register_header" /></div>
 	<div id="manager_instructions">
-	  One, enter keywords that relate to a topic you want people to care about (Example: Polar Bears)
+	  One, enter keywords that relate to a topic you want people to care about (Example: Polar Bears). 
 	  Two, enter the URL where the button will be hosted<br/>
 	  <i>*Check back for a full report reflecting your button(s) usage.</i>
 	</div>
@@ -34,12 +34,13 @@
 		
 		  <%= f.text_field :tags, :class => 'tags_box', :disabled => 'disabled' %><br/>
 		  <%= f.text_field :url, :class => 'url_box', :disabled => 'disabled' %><br/>
-		  <%= f.submit '' %>		  
-		  <%= link_to image_tag('/assets/Edit_BTN.png', :border => 0), '#', :class => 'edit_btn' %>
-		  <%= link_to image_tag('/assets/Remove_Active_BTN.png', :border => 0), site, confirm: 'Are you sure?', method: :delete %>
-		  <%= link_to image_tag('/assets/HideCode_BTN.png', :class => 'hidecode_btn', :border => 0), '#'  %>
-		 <%= link_to image_tag('/assets/SeeCode_BTN.png', :class => 'seecode_btn', :border => 0), '#'  %>
-				
+		  <div class="register_button_rows">
+		    <%= f.submit '' %>		  
+		    <%= link_to image_tag('/assets/Edit_BTN.png', :border => 0), '#', :class => 'edit_btn' %>
+		    <%= link_to image_tag('/assets/Remove_Active_BTN.png', :border => 0), site, confirm: 'Are you sure?', method: :delete %>
+		    <%= link_to image_tag('/assets/HideCode_BTN.png', :class => 'hidecode_btn', :border => 0), '#'  %>
+		    <%= link_to image_tag('/assets/SeeCode_BTN.png', :class => 'seecode_btn', :border => 0), '#'  %>
+		  </div>
 	    </div>
 	  <div class="manager_caretopic_right">
 	      <%= f.text_area :description, :class => 'description', :disabled => 'disabled' %>
@@ -54,8 +55,11 @@
 	  <textarea class="manager_copytext" >
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+		<script  type="text/javascript" src='http://connect.facebook.net/en_US/all.js'></script>
+
 		<script language="javascript">
 		$(document).ready( function() {
+		      FB.init({appId: "363753320314028", status: true, cookie: true});
 
 		    $('a#icare_button_link').click( function() {
 
@@ -73,6 +77,7 @@
 				    buttons: {
 					    "Post to Facebook": function() {
 						    $( this ).dialog( "close" );
+						    postToFeed();
 					    },
 					    "I will, but not right now": function() {
 						    $( this ).dialog( "close" );
@@ -84,12 +89,40 @@
 		      
 		    });
 		});
+		function postToFeed() {
 
+		    // calling the API ...
+		    var obj = {
+			/*
+		      method: 'feed',
+		      link: window.location.toString(),
+		      picture: 'http://172.30.11.22:3003/assets/ICARE_button_FINAL_03.png',
+		      name: 'I Care about <%= site.description %>',
+		      caption: 'Please support my cause!',
+		      description: 'I Care about <%= site.description %>'
+		      */
+	  method: 'feed',
+          link: 'https://developers.facebook.com/docs/reference/dialogs/',
+          picture: 'http://fbrell.com/f8.jpg',
+          name: 'Facebook Dialogs',
+          caption: 'Reference Documentation',
+          description: 'Using Dialogs to interact with users.'
+
+		    };
+
+		    function callback(response) {
+		      alert("Post ID: " + response['post_id']);
+		    }
+
+		    FB.ui(obj, callback);
+		}
 		</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a>
-
+		
 		<div id="dialog-confirm" title="Thank you!" style="display:none">
 			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Would you like to share this on Facebook?</p>
 		</div>
+	        <div id='fb-root'></div>
+
 	  </textarea>
 	</td>
       </tr>

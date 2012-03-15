@@ -9,6 +9,9 @@
 //= require_tree .
 
 $(document).ready( function() {
+  
+     rotate_banners();
+  
   $('img.hidecode_btn').click( function() {
     $(this).closest('tr').next('tr.showcode_row').toggle();
     $(this).hide();
@@ -54,7 +57,7 @@ $(document).ready( function() {
    $('a.edit_btn').click(function() {
      $(this).hide();
      $(this).parent().find('input[type=submit]').show();
-     $(this).parent().parent().find('input, textarea').removeAttr('disabled');
+     $(this).parent().parent().parent().find('input, textarea').removeAttr('disabled');
    });
    
    $('input[type=submit]').click(function() {
@@ -72,3 +75,65 @@ $(document).ready( function() {
    
    
 });
+
+function rotate_banners()
+{
+    $('div#rotating_hero_div img#hero_image').show();
+    $('div#rotating_hero_div img.banners').hide();    
+    //$('div#effient_banner img#banner1').fadeIn(7000);
+  //  $('div#effient_banner img#banner1').delay(1000);
+//    $('div#effient_banner img#banner1').hide();
+      
+            
+    //--------------------------
+     $("div#rotating_hero_div").queue("bannerQ", function() {
+	$('div#rotating_hero_div img#hero_image').fadeIn(2500);
+	var self = this;
+	setTimeout(function() {
+	  $(self).dequeue("bannerQ");
+	}, 6000);
+    });
+
+    
+     $("div#rotating_hero_div").queue("bannerQ", function() {
+       $('div#rotating_hero_div img#hero_image').hide();
+	$('div#rotating_hero_div img#hero_image1').fadeIn(2500);
+	var self = this;
+	setTimeout(function() {
+	  $(self).dequeue("bannerQ");
+	}, 6000);
+    });
+     
+     $("div#rotating_hero_div").queue("bannerQ", function() {
+        $('div#rotating_hero_div img#hero_image1').hide();
+
+	$('div#rotating_hero_div img#hero_image2').fadeIn(2500);
+	var self = this;
+	setTimeout(function() {
+	  $(self).dequeue("bannerQ");
+	}, 6000);
+    });
+     
+     $("div#rotating_hero_div").queue("bannerQ", function() {
+        $('div#rotating_hero_div img#hero_image2').hide();
+
+	$('div#rotating_hero_div img#hero_image3').fadeIn(2500);
+	var self = this;
+	setTimeout(function() {
+	  $(self).dequeue("bannerQ");
+	}, 6000);
+    });
+    
+      $("div#rotating_hero_div").queue("bannerQ", function() {
+	$('div#rotating_hero_div img#hero_image3').hide();
+	$('div#rotating_hero_div img#hero_image4').fadeIn(2500);
+	var self = this;
+	setTimeout(function() {
+	  $(self).dequeue("bannerQ");
+	}, 6000);
+    });   
+      
+     
+    $("div#rotating_hero_div").dequeue("bannerQ");
+    
+}

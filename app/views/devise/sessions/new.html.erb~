@@ -16,8 +16,13 @@
 
     <img src="/assets/Header_Image.png" id="main_image" />
     <div id="subheader">A new way to show support when 'Like' isn't the right word.</div>
-    <img src="/assets/HERO_IMAGE_1.png" id="hero_image" />
-
+    <div id="rotating_hero_div">
+      <img src="/assets/HERO_HEALTH.png" id="hero_image" class="hero_images" />
+      <img src="/assets/HERO_JAPAN.png" id="hero_image" class="hero_images" />
+      <img src="/assets/HERO_OBAMA.png" id="hero_image" class="hero_images" />
+      <img src="/assets/HERO_TORNADO.png" id="hero_image" class="hero_images" />
+       <img src="/assets/HERO_TRENDING.png" id="hero_image" class="hero_images" />
+    </div>
     <div id="info_container">
       <div id="left_image">
 	<img src="/assets/LEFT_ARROW_SEE.png" id="see_the_impact" />
@@ -50,7 +55,6 @@
   <hr/>
     <div id="register_text"><b>Register for Analytics</b>. Track how <b>I CARE</b> is being used on the site.</div>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
 
     <%= f.email_field :email, :id => 'signup_user_email', :value => 'email' %>
 
@@ -61,6 +65,7 @@
      <input id="password-clear-confirm" type="text" value="confirm password"><br/>
 	   
   <%= f.submit "", :type => :image, :src => '/assets/SignUp_BTN.png', :id => 'sign_up_button' %>
+      <%= devise_error_messages! %>
   <% end %>
   </div>
 </div>

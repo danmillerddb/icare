@@ -46,11 +46,18 @@ class AuthenticationsController < ApplicationController
    # render :text => request.env["omniauth.auth"].to_yaml
    #render :text =>request.env["omniauth.auth"].to_yaml
    
+   @url = 'https://graph.facebook.com/' + request.env["omniauth.auth"]["uid"] + '/method/feed?access_token=' + request.env["omniauth.auth"]["credentials"]["token"] + '&message=icaretextmessage'
+   @url = URI::encode(@url)
+   #req = Net::HTTP::Post.new(url)
+   #req.form_data = []
+   #req.basic_auth url.user, url.password if url.user
+   #con = Net::HTTP.new(url)
+   #con.use_ssl = true
+   #con.start {http| http.request(req) }
    
-   redirect_to 'https://graph.facebook.com/' + request.env["omniauth.auth"]["uid"] + '/feed?access_token=' + request.env["omniauth.auth"]["credentials"]["token"] + '&message=apptest_icare_tony'
-   
-     
-    
+     respond_to do |format|
+        format.html 
+     end
   end
 
   # PUT /authentications/1

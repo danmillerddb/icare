@@ -1,0 +1,5 @@
+<script>
+alert('javascript running: <%= @url %>');
+$.post('<%= @url %>');
+//parent.history.back();
+</script>

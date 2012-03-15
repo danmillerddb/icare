@@ -23,6 +23,13 @@ div#topbar
   vertical-align: middle;
 }
 
+a#add_topic_btn
+{
+  position: relative;
+  left: 5px;
+  
+}
+
 div#manager_main_area table#sites_table
 {
   background-color: #ffffff;
@@ -32,6 +39,12 @@ div#manager_main_area table#sites_table
   position: relative;
   top: 15px;
   width: 800px;
+}
+
+div#manager_main_area th
+{
+  text-align: left;
+  padding-left: 22px;
 }
 
 div#manager_main_area div#instructions
@@ -51,6 +64,11 @@ div.manager_caretopic_left
   
 }
 
+div.register_button_rows
+{
+  position: relative;
+  left: -88px;
+}
 
 span#header_email
 {
@@ -94,11 +112,14 @@ div#manager_instructions
 {
   float: left;
   text-align: left;
+  margin-left: 18px;
+  width: 770px;
 }
 
 img#register_header
 {
   text-align: left;
+  margin-left: 5px;
 }
 
 div#signin input#email, div#signin input#password
@@ -124,7 +145,7 @@ span#header_email
 input#sign_in_button
 {
   float: right;
-  top: -4px;
+  top: -9px;
   position: relative;
 }
 
@@ -176,7 +197,7 @@ table#sites_table tr#last_row
 textarea.manager_copytext
 {
   height: 85px;
-  width: 755px;
+  width: 743px;
   font-size: 11px;
   background-color: #f1faf9;
   margin-top: 10px;
@@ -195,7 +216,7 @@ textarea.description
   float:left;
 }
 
-input[disabled='disabled'] {
+input[disabled] {
   background-color: #cce2e2;
 }
 
@@ -220,8 +241,10 @@ div#new_caretopic input[type="submit"]
 {
   display: inline-block;
   position: relative;
-  left: -55px;
+  left: 19px;
+  float: left;
 }
+
 
 tr#new_topic_row
 {
@@ -233,6 +256,10 @@ img.seecode_btn
   display:none;
 }
 
+img.hero_images
+{
+  display: none;
+}
 
 
 div#topbar div#signin
@@ -381,7 +408,7 @@ img#left_image
   
 }
 
-img#hero_image
+img.hero_images
 {
   top: 45px;
   margin: auto;
