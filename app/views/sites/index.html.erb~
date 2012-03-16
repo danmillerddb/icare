@@ -111,9 +111,9 @@
 		</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a> &nbsp;<span id="support_count"></span>
 		
 		<div id="dialog-confirm" style="display:none; ">
-			<p><span class="ui-icon ui-icon-alert" style="margin-left: auto; margin-right: auto;"><br/><br/><br/><img src="http://<%= request.host_with_port  %>/assets/SHARE_Overlay_Text.png" /></span></p>
-		
-			<div id="dialog-nav-options"><a href="" onclick="$('#dialog-confirm').dialog('close');" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; top: 6px; font-size: 15px; color: #71a2a0;"/>I will, but not right now</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="cursor:pointer;" onclick="window.location.replace('http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name)) %>&description=<%= escape_javascript(URI::encode(site.description)) %>&message=I%20care%20about%20<%= escape_javascript(URI::encode(site.name)) %>');" src="http://<%= request.host_with_port  %>/assets/FB_SHARE_BTN.png" /></div>
+			<p><span class="ui-icon ui-icon-alert" style="margin-left: auto; margin-right: auto;"><br/><br/><br/><img src="http://<%= request.host_with_port.to_s  %>/assets/SHARE_Overlay_Text.png" /></span></p>
+		<a href="" id="exit_link" onclick="$('#dialog-confirm').dialog('close');" style="vertical-align:top; font-family:helvetica, arial, verdana; text-decoration: none; position: relative; top: -120px; left: 460px; font-size: 22px; color: #71a2a0;"/>X</a>
+			<div id="dialog-nav-options" style="position: relative; margin-top: 60px;"><a href="http://<%= request.host_with_port  %>" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; top: 6px; font-size: 15px; color: #71a2a0;"/>I will, but not right now</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="cursor:pointer;" onclick="window.location.replace('http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name.to_s)) %>&description=<%= escape_javascript(URI::encode(site.description.to_s + '. Join the movement at www.ICARE-MOVEMENT.com')) %>&message=I%20care%20about%20<%= escape_javascript(URI::encode(site.name.to_s)) %>');" src="http://<%= request.host_with_port.to_s  %>/assets/FB_SHARE_BTN.png" /></div>
 		</div>
 		    
 						    
@@ -127,7 +127,8 @@
 	<td>
 	    <%= form_for(@site) do |f| %>
 		<div class="manager_caretopic_left" id="new_caretopic">
-		    
+		     <%= f.text_field :name, :class => 'name_box', :value => 'Enter your title'  %><br/>
+		 
 		      <%= f.text_field :tags, :class => 'tags_box', :value => 'Keyword(s)'  %><br/>
 		      <%= f.text_field :url, :class => 'url_box', :value => 'Enter your url' %><br/>
 		      <%= f.submit '' %>		  
@@ -154,5 +155,4 @@
   </div>
 
  
-
 
