@@ -26,8 +26,8 @@ $(document).ready( function() {
     return false;
   });
   
-  $('input.tags_box, input.url_box, textarea.description').focus(function() {
-    if ($(this).val() == 'Keyword(s)' || $(this).val() == 'Enter your url' || $(this).val() == 'Enter your description')
+  $('input.tags_box, input.url_box, input.name_box, textarea.description').focus(function() {
+    if ($(this).val() == 'Keyword(s)' || $(this).val() == 'Enter your url' || $(this).val() == 'Enter your description' || $(this).val() == 'Enter your title')
       $(this).val('');
   });
   
@@ -35,6 +35,12 @@ $(document).ready( function() {
     if ($(this).val() == '')
       $(this).val('Keyword(s)');
   });
+  
+  $('input.name_box').blur(function() {
+    if ($(this).val() == '')
+      $(this).val('Enter your title');
+  });
+  
   
   $('input.url_box').blur(function() {
     if ($(this).val() == '')

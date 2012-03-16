@@ -26,8 +26,8 @@ $(document).ready( function() {
     return false;
   });
   
-  $('input.tags_box, input.url_box, textarea.description').focus(function() {
-    if ($(this).val() == 'Keyword(s)' || $(this).val() == 'Enter your url' || $(this).val() == 'Enter your description')
+  $('input.tags_box, input.url_box, input.name_box, textarea.description').focus(function() {
+    if ($(this).val() == 'Keyword(s)' || $(this).val() == 'Enter your url' || $(this).val() == 'Enter your description' || $(this).val() == 'Enter your title')
       $(this).val('');
   });
   
@@ -35,6 +35,12 @@ $(document).ready( function() {
     if ($(this).val() == '')
       $(this).val('Keyword(s)');
   });
+  
+  $('input.name_box').blur(function() {
+    if ($(this).val() == '')
+      $(this).val('Title');
+  });
+  
   
   $('input.url_box').blur(function() {
     if ($(this).val() == '')
@@ -91,7 +97,7 @@ function rotate_banners()
 	var self = this;
 	setTimeout(function() {
 	  $(self).dequeue("bannerQ");
-	}, 7000);
+	}, 6000);
     });
 
     
@@ -101,7 +107,7 @@ function rotate_banners()
 	var self = this;
 	setTimeout(function() {
 	  $(self).dequeue("bannerQ");
-	}, 7000);
+	}, 6000);
     });
      
      $("div#rotating_hero_div").queue("bannerQ", function() {
@@ -111,7 +117,7 @@ function rotate_banners()
 	var self = this;
 	setTimeout(function() {
 	  $(self).dequeue("bannerQ");
-	}, 7000);
+	}, 6000);
     });
      
      $("div#rotating_hero_div").queue("bannerQ", function() {
@@ -121,7 +127,7 @@ function rotate_banners()
 	var self = this;
 	setTimeout(function() {
 	  $(self).dequeue("bannerQ");
-	}, 7000);
+	}, 6000);
     });
     
       $("div#rotating_hero_div").queue("bannerQ", function() {
@@ -130,7 +136,7 @@ function rotate_banners()
 	var self = this;
 	setTimeout(function() {
 	  $(self).dequeue("bannerQ");
-	}, 7000);
+	}, 6000);
     });   
       
      

@@ -119,6 +119,7 @@ div#manager_instructions
 img#register_header
 {
   text-align: left;
+  margin-left: 5px;
 }
 
 div#signin input#email, div#signin input#password
@@ -209,7 +210,7 @@ textarea.manager_copytext
 
 textarea.description
 {
-  height: 55px;
+  height: 90px;
   width: 240px;
   font-size: 11px;
   float:left;
@@ -258,6 +259,11 @@ img.seecode_btn
 img.hero_images
 {
   display: none;
+}
+
+div#rotating_hero_div
+{
+  margin-top: 70px;
 }
 
 
@@ -339,7 +345,7 @@ div#info_container
 {
   
    position: relative;
-  top: 60px;
+  top: 40px;
   font-size: 11px;
   width: 800px;
   margin: auto;
@@ -349,6 +355,8 @@ div#register_text
 {
   margin-bottom: 16px;
 }
+
+
 
 div#info_container div#left_side
 {
@@ -370,6 +378,8 @@ div#info_container div#left_image
 {
   float: left;
   width: 100px;
+  position: relative;
+  top: 60px;
  
 }
 
@@ -380,6 +390,7 @@ div#info_container div#right_image
   position: relative;
   top: -110px;
   left: 17px;
+  display: none;
 }
 
 div#our_mission
@@ -409,7 +420,7 @@ img#left_image
 
 img.hero_images
 {
-  top: 45px;
+  margin-top: 45px;
   margin: auto;
   position: relative;
   text-align: center;
@@ -425,30 +436,31 @@ hr
 div#bottom_signup
 {
   position: relative;
-  top: 160px;
-  margin-top: 160px;
-  width: 750px;
-  margin: auto;
+  margin-top: 330px;
+  width: 635px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2px;
 }
 
 div#bottom_signup input#signup_user_email
 {
-  margin-right: 14px;
-  width: 223px;
+  margin-right: 12px;
+  width: 185px;
   background-color: #caf2ec;
 }
 
 div#bottom_signup input#password-clear-create
 {
-  margin-right: 14px;
-  width: 223px;
+  margin-right: 12px;
+  width: 185px;
   background-color: #caf2ec;
 }
 
 div#bottom_signup input#password-clear-confirm
 {
-  margin-right: 14px;
-  width: 223px;
+  margin-right: 12px;
+  width: 185px;
   background-color: #caf2ec;
 }
 
@@ -464,9 +476,9 @@ div#topbar img#icare_logo
 
 div#bottom_signup input#signup_user_password
 {
-  margin-right: 15px;
+  margin-right: 12px;
   background-color: #caf2ec;
-    width: 223px;
+    width: 185px;
 
 }
 
@@ -474,12 +486,26 @@ div#bottom_signup input#signup_user_password_confirmation
 {
   
   background-color: #caf2ec;
-    width: 223px;
+    width: 185px;
 
+}
+
+img.full_report_btn
+{
+  margin-top: 36px;
 }
 
 
 
+div#legal_copy
+{
+  text-align: center;
+
+  position: relative;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 input#sign_in
 {
