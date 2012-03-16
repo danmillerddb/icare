@@ -62,7 +62,8 @@
 		$(document).ready( function() {
 		    $.get('http://<%= request.host_with_port  %>/sites/get_count/<%= site.id %>', function(data) {
 			  $('span#support_count').html(data);
-			})
+			});
+
 		    $('a#icare_button_link').click( function() {
 
 			$.get($('a#icare_button_link').attr('href'), function(data) {
@@ -112,7 +113,7 @@
 		<div id="dialog-confirm" style="display:none; ">
 			<p><span class="ui-icon ui-icon-alert" style="margin-left: auto; margin-right: auto;"><br/><br/><br/><img src="http://<%= request.host_with_port  %>/assets/SHARE_Overlay_Text.png" /></span></p>
 		
-			<div id="dialog-nav-options"><a href="" onclick="$('#dialog-confirm').dialog('close');" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; top: 6px; font-size: 15px; color: #71a2a0;"/>I will, but not right now</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="cursor:pointer;" onclick="window.location.replace('http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name)) %>&description=<%= escape_javascript(URI::encode(site.description)) %>&message=I%20care%20about%20<%= escape_javascript(URI::encode(site.name)) %>');" src="http://<%= request.host_with_port  %>/assets/FB_SHARE_BTN.png" /></div>
+			<div id="dialog-nav-options"><a href="" onclick="$('#dialog-confirm').dialog('close');" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; top: 6px; font-size: 15px; color: #71a2a0;"/>I will, but not right now</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="cursor:pointer;" onclick="window.location.replace('http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name)) %>&description=<%= escape_javascript(URI::encode(site.description + '. Join the movement at www.ICARE-MOVEMENT.com')) %>&message=I%20care%20about%20<%= escape_javascript(URI::encode(site.name)) %>');" src="http://<%= request.host_with_port  %>/assets/FB_SHARE_BTN.png" /></div>
 		</div>
 		    
 						    
