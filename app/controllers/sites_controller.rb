@@ -29,11 +29,10 @@ class SitesController < ApplicationController
     puts "referrer return: " + session[:icare_referrer]
  
     if session[:icare_referrer].nil? || session[:icare_referrer] == '' then
-      redirect_to session[:icare_referrer].to_s
+       redirect_to '/'
     else
-      redirect_to '/'
+       redirect_to session[:icare_referrer].to_s
     end
-    
   end
   
   # GET /sites/1.json
