@@ -83,7 +83,7 @@
 				       $(this).find('p').css('text-align', 'center');
 				    ////  $(this).parents().find('.ui-dialog-buttonpane').css('display', 'none');
 				      $(this).parents().find('.ui-dialog-titlebar').css('display', 'none');
-				       $(this).find('div#dialog-nav-options').css('margin-top', '105px');
+				       $(this).find('div#dialog-nav-options').css('margin-top', '65px');
 				      $(this).find('div#dialog-nav-options').css('margin-left', '60px');
 
 				    //
