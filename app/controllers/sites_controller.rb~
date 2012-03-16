@@ -24,6 +24,14 @@ class SitesController < ApplicationController
     end
   end
   
+  def get_count
+    @count = Site.find(params[:id]).votes_count
+    
+    respond_to do |format|
+      format.html { render :layout => false }
+    end
+  end
+  
   
   def return_to_referrer
     puts "referrer return: " + session[:icare_referrer]
@@ -33,7 +41,6 @@ class SitesController < ApplicationController
     else
        redirect_to session[:icare_referrer].to_s
     end
-    redirect_to '/'
   end
   
   # GET /sites/1.json

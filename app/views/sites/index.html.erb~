@@ -54,12 +54,15 @@
       <tr class="showcode_row">
 	<td colspan="2" >
 	  <textarea class="manager_copytext" >
+		<style> span#support_count { font-family: helvetica, arial, verdana; font-size: 11px; } </style>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 		<script  type="text/javascript" src='http://connect.facebook.net/en_US/all.js'></script>
 		<script language="javascript">
 		$(document).ready( function() {
-
+		    $.get('http://<%= request.host_with_port  %>/sites/get_count/<%= site.id %>', function(data) {
+			  $('span#support_count').html(data);
+			})
 		    $('a#icare_button_link').click( function() {
 
 			$.get($('a#icare_button_link').attr('href'), function(data) {
@@ -104,12 +107,12 @@
 		    });
 		});
 		
-		</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a>
+		</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a> &nbsp;<span id="support_count"></span>
 		
 		<div id="dialog-confirm" style="display:none; ">
 			<p><span class="ui-icon ui-icon-alert" style="margin-left: auto; margin-right: auto;"><br/><br/><br/><img src="http://<%= request.host_with_port  %>/assets/SHARE_Overlay_Text.png" /></span></p>
 		
-			<div id="dialog-nav-options"><a href="" onclick="$('#dialog-confirm').dialog('close');" style="vertical-align:top;"/>I will, but not right now</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="cursor:pointer;" onclick="window.location.replace('http://172.30.11.22:3003/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name)) %>&description=<%= escape_javascript(URI::encode(site.description)) %>&message=I%20care%20about%20%20<%= escape_javascript(URI::encode(site.name)) %>');" src="http://<%= request.host_with_port  %>/assets/FB_SHARE_BTN.png" /></div>
+			<div id="dialog-nav-options"><a href="" onclick="$('#dialog-confirm').dialog('close');" style="vertical-align:top;"/>I will, but not right now</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="cursor:pointer;" onclick="window.location.replace('http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name)) %>&description=<%= escape_javascript(URI::encode(site.description)) %>&message=I%20care%20about%20<%= escape_javascript(URI::encode(site.name)) %>');" src="http://<%= request.host_with_port  %>/assets/FB_SHARE_BTN.png" /></div>
 		</div>
 		    
 						    

@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
-  before_filter :authenticate_user!, :except => ['impress', 'post_to_wall']
+  before_filter :authenticate_user!, :except => ['impress', 'post_to_wall', 'get_count']
   # GET /sites
   # GET /sites.json
   def index
@@ -21,6 +21,14 @@ class SitesController < ApplicationController
     respond_to do |format|
       format.html 
       format.json { render json: @sites }
+    end
+  end
+  
+  def get_count
+    @count = Site.find(params[:id]).votes_count
+    
+    respond_to do |format|
+      format.html { render :layout => false }
     end
   end
   
