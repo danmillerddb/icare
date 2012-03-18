@@ -53,7 +53,7 @@
   <div id="bottom_signup">
   <hr/>
     <div id="register_text">
-      <b>Register</b> and track how I CARE is being used on your site. 
+      <b>Register</b> and track how <b>I CARE</b> is being used on your site. 
     </div>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
@@ -66,7 +66,9 @@
      <input id="password-clear-confirm" type="text" value="confirm password"><br/>
 	   
   <%= f.submit "", :type => :image, :src => '/assets/SignUp_BTN.png', :id => 'sign_up_button' %>
-      <%= devise_error_messages! %>
+      <%= devise_error_messages! %><br/>
+      <%= flash[:notice] = flash[:notice].to_a.concat resource.errors.full_messages %>
+
   <% end %>
   </div>
 </div>

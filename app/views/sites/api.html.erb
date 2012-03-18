@@ -1,0 +1,158 @@
+
+
+<div id="wrapper">
+  <div id="topbar">
+<img src="/assets/I_CARE_Logo.png" id="icare_logo"/>
+      <span id="header_email"><span id="account_header">Account: </span><%= current_user.email %></span>
+      <%= link_to image_tag('/assets/LogOut_BTN.png', :border => 0), destroy_user_session_path, :method => :delete, :id => 'signout_link' %>
+      
+  </div>
+
+  <div id="manager_main_area">
+    <div id="instructions">
+      <div><img src="/assets/Reg_Title.png" id="register_header" /></div>
+	<div id="manager_instructions">
+	   I Care users can also access the site via our API.  <br/><br/>
+
+	   Users first need to create an account though the  <a href="http://<%= request.host  %>">home page</a>
+	</div>
+      
+    </div>
+    <table id="sites_table">
+      <tr>
+	<th>Care Topic</th>
+	
+	<th>Clicks to Date</th>
+      </tr>
+
+    <% @sites.each do |site| %>
+	
+      <tr>
+	<td>
+	    <%= form_for(site) do |f| %>
+	    <div class="manager_caretopic_left">
+		  <%= f.text_field :name, :class => 'name_box', :disabled => 'disabled' %><br/>
+		  
+		  <%= f.text_field :tags, :class => 'tags_box', :disabled => 'disabled' %><br/>
+		  <%= f.text_field :url, :class => 'url_box', :disabled => 'disabled' %><br/>
+		  <div class="register_button_rows">
+		    <%= f.submit '' %>		  
+		    <%= link_to image_tag('/assets/Edit_BTN.png', :border => 0), '#', :class => 'edit_btn' %>
+		    <%= link_to image_tag('/assets/Remove_Active_BTN.png', :border => 0), site, confirm: 'Are you sure?', method: :delete %>
+		    <%= link_to image_tag('/assets/HideCode_BTN.png', :class => 'hidecode_btn', :border => 0), '#'  %>
+		    <%= link_to image_tag('/assets/SeeCode_BTN.png', :class => 'seecode_btn', :border => 0), '#'  %>
+		  </div>
+	    </div>
+	  <div class="manager_caretopic_right">
+	      <%= f.text_area :description, :class => 'description', :disabled => 'disabled' %>
+	  </div>
+	  <% end %>
+	</td>
+	
+	<td class="clicks_to_date_column"> <%= site.votes_count  %><br/><br/><center><%= image_tag('/assets/FullReport_BTN.png', :class => 'full_report_btn', :border => 0) %></center></td>
+      </tr>
+      <tr class="showcode_row">
+	<td colspan="2" >
+	  <textarea class="manager_copytext" >
+		<style> span#support_count { font-family: helvetica, arial, verdana; font-size: 11px; position: relative; bottom: 8px;} </style>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+		<script  type="text/javascript" src='http://connect.facebook.net/en_US/all.js'></script>
+		<script language="javascript">
+		$(document).ready( function() {
+		    $.get('http://<%= request.host_with_port  %>/sites/get_count/<%= site.id %>', function(data) {
+			  $('span#support_count').html(data);
+			});
+
+		    $('a#icare_button_link').click( function() {
+
+			$.get($('a#icare_button_link').attr('href'), function(data) {
+			
+			}).error(function() { 
+			      $(location).attr('http://<%= request.host_with_port  %>'); 
+			});
+			    $( "#dialog:ui-dialog" ).dialog( "destroy" );
+		    
+			    $( "#dialog-confirm" ).dialog({
+				    resizable: false,
+				    height: 290,
+				    width: 488,
+				    create: function(event, ui)
+				    {
+				       $(this).parents('.ui-dialog').css('background-image', "url('http://<%= request.host_with_port  %>/assets/SHARE_Overlay_03.png')");
+				       $(this).find('p').css('text-align', 'center');
+				    ////  $(this).parents().find('.ui-dialog-buttonpane').css('display', 'none');
+				      $(this).parents().find('.ui-dialog-titlebar').css('display', 'none');
+				       $(this).find('div#dialog-nav-options').css('margin-top', '65px');
+				      $(this).find('div#dialog-nav-options').css('margin-left', '60px');
+
+				    //
+				    }
+				    ,
+				    modal: true
+				    /*
+				    buttons: {
+					    "Post to Facebook": function() {
+						    $( this ).dialog( "close" );
+						    window.location.replace('http://172.30.11.22:3003/sites/post_to_wall?name=<%= URI.escape(site.url) %>&description=<%= URI.escape(site.description) %>');
+					    },
+					    "I will, but not right now": function() {
+						    $( this ).dialog( "close" );
+					    }
+				    }
+				    */
+			    });    
+			
+			return false;
+		      
+		    });
+		});
+		
+		</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a> &nbsp;<span id="support_count"></span>
+		
+		<div id="dialog-confirm" style="display:none; ">
+			<p><span class="ui-icon ui-icon-alert" style="margin-left: auto; margin-right: auto;"><br/><br/><br/><img src="http://<%= request.host_with_port.to_s  %>/assets/SHARE_Overlay_Text.png" /></span></p>
+		<a href="" id="exit_link" onclick="$('#dialog-confirm').dialog('close');" style="vertical-align:top; font-family:helvetica, arial, verdana; text-decoration: none; position: relative; top: -120px; left: 460px; font-size: 22px; color: #71a2a0;"/>X</a>
+			<div id="dialog-nav-options" style="position: relative; margin-top: 60px;"><div style="position: relative; left: -40px; "><a href="http://<%= request.host_with_port  %>" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; top: 6px; font-size: 11px; color: #71a2a0;"/>Learn more at www.ICARE-MOVEMENT.com</a></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="cursor:pointer;position: relative; left: 178px;top: -15px; " onclick="window.location.replace('http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name.to_s)) %>&description=<%= escape_javascript(URI::encode(site.description.to_s + '. Join the movement at www.ICARE-MOVEMENT.com')) %>&message=I%20care%20about%20<%= escape_javascript(URI::encode(site.name.to_s)) %>');" src="http://<%= request.host_with_port.to_s  %>/assets/FB_SHARE_BTN.png" /></div>
+		</div>
+		    
+						    
+				
+	  </textarea>
+	</td>
+      </tr>
+	
+    <% end %>
+      <tr id="new_topic_row">
+	<td>
+	    <%= form_for(@site) do |f| %>
+		<div class="manager_caretopic_left" id="new_caretopic">
+		     <%= f.text_field :name, :class => 'name_box', :value => 'Enter your title'  %><br/>
+		 
+		      <%= f.text_field :tags, :class => 'tags_box', :value => 'Keyword(s)'  %><br/>
+		      <%= f.text_field :url, :class => 'url_box', :value => 'Enter your url' %><br/>
+		      <%= f.submit '' %>		  
+		      
+				    
+		</div>
+		<div class="manager_caretopic_right">
+		    <%= f.text_area :description, :class => 'description', :value => 'Enter your description' %>
+		</div>
+	  <% end %>
+	</td>
+	
+	<td class="clicks_to_date_column"></td>
+      </tr>
+      <tr id="last_row">
+	  <td>&nbsp;&nbsp;&nbsp;<%= link_to image_tag('/assets/AddTopic_BTN.png', :border => 0), '#', :id => 'add_topic_btn' %>
+	  </td>
+      </tr>
+    </table>
+
+    <br />
+
+     
+  </div>
+
+ 
+

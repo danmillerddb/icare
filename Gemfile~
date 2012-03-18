@@ -13,7 +13,7 @@ gem 'voteable_mongo'
 gem 'omniauth-facebook'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'mongoid_taggable'
-
+gem 'haml'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
