@@ -12,11 +12,8 @@
       <%= content_tag :div, message, :id => "flash_#{name}" %>
     <% end %>
   <% else %>
-
-    # old code
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
-
-  <% end %> #don't forget the extra end
+  <% end %> 
 <% end %>
 
 

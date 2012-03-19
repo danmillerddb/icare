@@ -66,9 +66,10 @@
      <input id="password-clear-confirm" type="text" value="confirm password"><br/>
 	   
   <%= f.submit "", :type => :image, :src => '/assets/SignUp_BTN.png', :id => 'sign_up_button' %>
-      <%= devise_error_messages! %><br/>
-      <%= flash[:notice] = flash[:notice].to_a.concat resource.errors.full_messages %>
+     
 
+
+<%= alert %>
   <% end %>
   </div>
 </div>
