@@ -5,6 +5,7 @@ Icare::Application.routes.draw do
   match 'sites/return_to_referrer' => 'sites#return_to_referrer'
   match 'sites/post_to_wall' => 'sites#post_to_wall'
   match 'sites/get_count/:id' => 'sites#get_count'
+  match 'api' => 'sites#api'
   resources :sites
   match 'imp_sites/:owner/:site_id' => 'sites#impress'
   devise_for :users, :controllers => {:registrations => "registrations"}

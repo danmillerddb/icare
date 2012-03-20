@@ -41,6 +41,19 @@ div#manager_main_area table#sites_table
   width: 800px;
 }
 
+div#manager_main_area table.api_table
+{
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  position: relative;
+  top: 15px;
+  width: 800px;
+  text-align: left;
+  
+}
+
 div#manager_main_area th
 {
   text-align: left;
@@ -160,17 +173,17 @@ tr.showcode_row
   
 }
 
-table#sites_table a:hover
+table#sites_table a:hover, table.api_table a:hover
 {
   text-decoration: none;
 }
 
-table#sites_table th
+table#sites_table th, table.api_table th
 {
   background-color: #a9dbd2;
 }
 
-table#sites_table td
+table#sites_table td, table.api_table td
 {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -178,7 +191,7 @@ table#sites_table td
   padding-right: 10px;
 }
 
-table#sites_table td.clicks_to_date_column
+table#sites_table td.clicks_to_date_column, table.api_table td.clicks_to_date_column
 {
   border-left: 1px;
   border-right: 0px;
@@ -188,7 +201,7 @@ table#sites_table td.clicks_to_date_column
 }
 
 
-table#sites_table tr#last_row
+table#sites_table tr#last_row, table.api_table tr#last_row
 {
   text-align: left;
 }
@@ -210,7 +223,7 @@ textarea.manager_copytext
 
 textarea.description
 {
-  height: 90px;
+  height: 93px;
   width: 240px;
   font-size: 11px;
   float:left;
@@ -264,6 +277,11 @@ img.hero_images
 div#rotating_hero_div
 {
   margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 635px;
+  height: 184px;
+  padding: 0px;
 }
 
 
@@ -291,10 +309,24 @@ div#main_area
   height: 100%;
 }
 
+
+
 div#manager_main_area
 {
    position: relative;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+  margin-top: -30px;
+  
+  height: 100%;
+}
+
+div#api_main_area
+{
+  position: relative;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
   

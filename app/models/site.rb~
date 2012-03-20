@@ -11,6 +11,11 @@ class Site
   field :count, type: Integer 
   belongs_to :user
   embeds_many :supports
+  attr_accessible :name, :url, :description, :supporters, :tags, :count
+
+  
+  tags_separator ' '
+  
   
   voteable self, :up => +1, :down => -1
 end

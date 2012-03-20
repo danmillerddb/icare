@@ -10,7 +10,8 @@ class SitesController < ApplicationController
     
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @sites }
+      format.json { render json: @sites, :only => [:_id, :name, :url, :description, :supporters, :tags, :count], :methods => ['votes_count'] }
+      #format.json { render json: @sites }
     end
   end
   

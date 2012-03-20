@@ -7,7 +7,7 @@ Icare::Application.routes.draw do
   match 'sites/get_count/:id' => 'sites#get_count'
   resources :sites
   match 'imp_sites/:owner/:site_id' => 'sites#impress'
-  devise_for :users#, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => {:registrations => "registrations"}
    
       match '/auth/:provider/callback' => 'authentications#create'
 
