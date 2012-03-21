@@ -1,3 +1,6 @@
+<% flash[:notice] = flash[:notice].to_a.concat resource.errors.full_messages %>
+
+
 <div id="wrapper">
   <div id="topbar">
       <img src="/assets/I_CARE_Logo.png" id="icare_logo"/>
@@ -70,6 +73,7 @@
 
 
 <h2><%= alert %></h2>
+<%= @user.errors.collect{|k,v| "<li>The #{k} #{v}</li>"}.to_s %>
   <% end %>
   </div>
 </div>
