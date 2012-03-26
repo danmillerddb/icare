@@ -73,7 +73,6 @@
 
 
 <h2><%= alert %></h2>
-<%= resource.errors.collect{|k,v| "<li>The #{k} #{v}</li>"}.to_s %>
-  <% end %>
+
   </div>
 </div>
