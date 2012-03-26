@@ -113,7 +113,7 @@
 		<div id="dialog-confirm" style="display:none; ">
 			<p><span class="ui-icon ui-icon-alert" style="margin-left: auto; margin-right: auto;"><br/><br/><br/><img src="http://<%= request.host_with_port.to_s  %>/assets/SHARE_Overlay_Text.png" /></span></p>
 		<a href="" id="exit_link" onclick="$('#dialog-confirm').dialog('close');" style="vertical-align:top; font-family:helvetica, arial, verdana; text-decoration: none; position: relative; top: -120px; left: 460px; font-size: 22px; color: #71a2a0;"/>X</a>
-			<div id="dialog-nav-options" style="position: relative; margin-top: 60px;"><div style="position: relative; left: -40px; "><a href="http://<%= request.host_with_port  %>" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; top: 6px; font-size: 11px; color: #71a2a0;"/>Learn more at www.ICARE-MOVEMENT.com</a></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="cursor:pointer;position: relative; left: 190px;top: -50px; " onclick="window.location.replace('http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name.to_s)) %>&description=<%= escape_javascript(URI::encode(site.description.to_s + '. Join the movement at www.ICARE-MOVEMENT.com')) %>&message=I%20care%20about%20<%= escape_javascript(URI::encode(site.name.to_s)) %>');" src="http://<%= request.host_with_port.to_s  %>/assets/FB_SHARE_BTN.png" /></div>
+			<div id="dialog-nav-options" style="position: relative; margin-top: 60px;"><div style="position: relative; left: -40px; "><a href="http://<%= request.host_with_port  %>" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; top: 6px; font-size: 11px; color: #71a2a0;"/>Learn more at www.ICARE-MOVEMENT.com</a></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="cursor:pointer;position: relative; left: 178px;top: -15px; " onclick="window.location.replace('http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name.to_s)) %>&description=<%= escape_javascript(URI::encode(site.description.to_s + '. Join the movement at www.ICARE-MOVEMENT.com')) %>&message=I%20care%20about%20<%= escape_javascript(URI::encode(site.name.to_s)) %>');" src="http://<%= request.host_with_port.to_s  %>/assets/FB_SHARE_BTN.png" /></div>
 		</div>
 		    
 						    
@@ -150,7 +150,9 @@
     </table>
 
     <br />
-
+    <div>
+      <a href="/api">Click here for API information</a>
+    </div>
      
   </div>
 
