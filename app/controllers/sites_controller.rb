@@ -34,7 +34,6 @@ class SitesController < ApplicationController
   
   
   def return_to_referrer
-    puts "referrer return: " + session[:icare_referrer]
  
     if session[:icare_referrer].nil? || session[:icare_referrer] == '' then
        redirect_to '/'
