@@ -4,7 +4,8 @@
   <title>I CARE</title>
   <%= stylesheet_link_tag    'application.css', '/bootstrap/css/bootstrap.min.css', 'jquery-ui-1.8.18.custom.css' %>
   <%= javascript_include_tag "application", 'jquery-1.7.1.min.js', 'jquery-ui-1.8.18.custom.min.js' %>
-  <% flash.each do |name, msg| %>
+  
+<% flash.each do |name, msg| %>
     <% if msg.class == Array %>
       <% msg.each do |message| %>
 	<%= content_tag :div, message, :id => "flash_#{name}" %>
@@ -13,7 +14,6 @@
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     <% end %> 
   <% end %>
-
 
   <%= csrf_meta_tags %>
   

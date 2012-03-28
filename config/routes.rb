@@ -1,7 +1,11 @@
 Icare::Application.routes.draw do
   resources :authentications
-
-  root :to => "sites#index"
+  authenticated :user do
+    root :to => 'sites#index'
+  end
+  devise_scope :user do
+    root :to => "devise/sessions#new"
+  end
   match 'sites/return_to_referrer' => 'sites#return_to_referrer'
   match 'sites/post_to_wall' => 'sites#post_to_wall'
   match 'sites/get_count/:id' => 'sites#get_count'

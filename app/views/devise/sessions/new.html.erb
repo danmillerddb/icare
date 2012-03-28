@@ -1,5 +1,6 @@
-<% flash[:notice] = flash[:notice].to_a.concat resource.errors.full_messages %>
-
+<% if user_signed_in? %>
+  <% redirect_to sites_url %>
+<% end %>
 
 <div id="wrapper">
   <div id="topbar">
@@ -72,7 +73,7 @@
      
 
 
-<h2><%= alert %></h2>
+<h2><% render 'devise/errors' %><%= alert %></h2>
   <% end %>
   </div>
 </div>

@@ -31,7 +31,7 @@ $(document).ready( function() {
 	    $(location).attr('href','http://<%= request.host_with_port  %>/auth/facebook');
 	    
 	}).error(function() { 
-	      $(location).attr('http://<%= request.host_with_port  %>:3003/'); 
+	      $(location).attr('http://<%= request.host_with_port  %>'); 
 	});
 
 	
