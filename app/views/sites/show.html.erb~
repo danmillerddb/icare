@@ -28,8 +28,7 @@ $(document).ready( function() {
     $('a#icare_button_link').click( function() {
 
 	$.get($('a#icare_button_link').attr('href'), function(data) {
-	  // $('').html(data);]
-	    //$(location).attr('href','http://172.30.11.22:3003/auth/facebook');
+	    $(location).attr('href','http://172.30.11.22:3003/auth/facebook');
 	    
 	}).error(function() { 
 	      $(location).attr('http://172.30.11.22:3003/'); 

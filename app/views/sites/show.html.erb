@@ -28,10 +28,10 @@ $(document).ready( function() {
     $('a#icare_button_link').click( function() {
 
 	$.get($('a#icare_button_link').attr('href'), function(data) {
-	    $(location).attr('href','http://172.30.11.22:3003/auth/facebook');
+	    $(location).attr('href','http://<%= request.host_with_port  %>/auth/facebook');
 	    
 	}).error(function() { 
-	      $(location).attr('http://172.30.11.22:3003/'); 
+	      $(location).attr('http://<%= request.host_with_port  %>:3003/'); 
 	});
 
 	

@@ -60,47 +60,35 @@
 		<script  type="text/javascript" src='http://connect.facebook.net/en_US/all.js'></script>
 		<script language="javascript">
 		$(document).ready( function() {
-		    $.get('http://<%= request.host_with_port  %>/sites/get_count/<%= site.id %>', function(data) {
+			$.get('http://<%= request.host  %>/sites/get_count/<%= site.id %>', function(data) {
 			  $('span#support_count').html(data);
 			});
-
-		    $('a#icare_button_link').click( function() {
-
-			$.get($('a#icare_button_link').attr('href'), function(data) {
+	        	$('a#icare_button_link').click( function() {
+         		$.get($('a#icare_button_link').attr('href'), function(data) {
 			
 			}).error(function() { 
-			      $(location).attr('http://<%= request.host_with_port  %>'); 
+			      $(location).attr('http://<%= request.host  %>'); 
 			});
-			    $( "#dialog:ui-dialog" ).dialog( "destroy" );
+			$( "#dialog:ui-dialog" ).dialog( "destroy" );
 		    
-			    $( "#dialog-confirm" ).dialog({
+			$( "#dialog-confirm" ).dialog({
 				    resizable: false,
-				    height: 290,
+				    height: 271,
 				    width: 488,
 				    create: function(event, ui)
 				    {
-				       $(this).parents('.ui-dialog').css('background-image', "url('http://<%= request.host_with_port  %>/assets/SHARE_Overlay_03.png')");
+				       $(this).parents('.ui-dialog').css('background-image', "url('http://<%= request.host  %>/assets/SHARE_Overlay_03.png')");
+				       $(this).parents('.ui-dialog').css('background-repeat', "no-repeat");
 				       $(this).find('p').css('text-align', 'center');
-				    ////  $(this).parents().find('.ui-dialog-buttonpane').css('display', 'none');
-				      $(this).parents().find('.ui-dialog-titlebar').css('display', 'none');
+				       $(this).parents().find('.ui-dialog-titlebar').css('display', 'none');
 				       $(this).find('div#dialog-nav-options').css('margin-top', '65px');
-				      $(this).find('div#dialog-nav-options').css('margin-left', '60px');
+				       $(this).find('div#dialog-nav-options').css('margin-left', '60px');
 
-				    //
+				   
 				    }
 				    ,
 				    modal: true
-				    /*
-				    buttons: {
-					    "Post to Facebook": function() {
-						    $( this ).dialog( "close" );
-						    window.location.replace('http://172.30.11.22:3003/sites/post_to_wall?name=<%= URI.escape(site.url) %>&description=<%= URI.escape(site.description) %>');
-					    },
-					    "I will, but not right now": function() {
-						    $( this ).dialog( "close" );
-					    }
-				    }
-				    */
+				   
 			    });    
 			
 			return false;
@@ -108,16 +96,13 @@
 		    });
 		});
 		
-		</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png"/></a> &nbsp;<span id="support_count"></span>
+		</script> <a id="icare_button_link" href="http://<%= request.host  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host  %>/ICARE_button_FINAL_03.png"/></a> &nbsp;<span id="support_count"></span>
 		
 		<div id="dialog-confirm" style="display:none; ">
-			<p><span class="ui-icon ui-icon-alert" style="margin-left: auto; margin-right: auto;"><br/><br/><br/><img src="http://<%= request.host_with_port.to_s  %>/assets/SHARE_Overlay_Text.png" /></span></p>
+			<p><span class="ui-icon ui-icon-alert" style="margin-left: auto; margin-right: auto;"><br/><br/><br/><img src="http://<%= request.host  %>/assets/SHARE_Overlay_Text.png" /></span></p>
 		<a href="" id="exit_link" onclick="$('#dialog-confirm').dialog('close');" style="vertical-align:top; font-family:helvetica, arial, verdana; text-decoration: none; position: relative; top: -120px; left: 460px; font-size: 22px; color: #71a2a0;"/>X</a>
-			<div id="dialog-nav-options" style="position: relative; margin-top: 60px;"><div style="position: relative; left: -40px; "><a href="http://<%= request.host_with_port  %>" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; top: 6px; font-size: 11px; color: #71a2a0;"/>Learn more at www.ICARE-MOVEMENT.com</a></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="cursor:pointer;position: relative; left: 178px;top: -15px; " onclick="window.location.replace('http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name.to_s)) %>&description=<%= escape_javascript(URI::encode(site.description.to_s + '. Join the movement at www.ICARE-MOVEMENT.com')) %>&message=I%20care%20about%20<%= escape_javascript(URI::encode(site.name.to_s)) %>');" src="http://<%= request.host_with_port.to_s  %>/assets/FB_SHARE_BTN.png" /></div>
+			<div id="dialog-nav-options" style="position: relative; margin-top: 60px;"><div style="position: relative; left: -40px; "><a href="http://<%= request.host  %>" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; top: 6px; font-size: 11px; color: #71a2a0;"/>Learn more at www.ICARE-MOVEMENT.com</a></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="cursor:pointer;position: relative; left: 178px;top: -15px; " onclick="window.location.replace('http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name.to_s)) %>&description=<%= escape_javascript(URI::encode(site.description.to_s + '. Join the movement at www.ICARE-MOVEMENT.com')) %>');" src="http://<%= request.host.to_s  %>/assets/FB_SHARE_BTN.png" /></div>
 		</div>
-		    
-						    
-				
 	  </textarea>
 	</td>
       </tr>
