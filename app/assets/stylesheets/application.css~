@@ -522,6 +522,8 @@ div#topbar span#beta_text
   margin-left: 30px;
   margin-top: 10px;
   vertical-align: bottom;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 div#bottom_signup input#signup_user_password
