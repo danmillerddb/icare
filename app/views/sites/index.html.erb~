@@ -96,7 +96,7 @@
 		    });
 		});
 		
-		</script> <a id="icare_button_link" href="http://<%= request.host  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host  %>/ICARE_button_FINAL_03.png"/></a> &nbsp;<span id="support_count"></span>
+		</script> <a id="icare_button_link" href="http://<%= request.host  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host  %>/ICARE_button_FINAL_03.png" border="0" /></a> &nbsp;<span id="support_count"></span>
 		
 		<div id="dialog-confirm" style="display:none; ">
 			<p><span class="ui-icon ui-icon-alert" style="margin-left: auto; margin-right: auto;"><br/><br/><br/><img src="http://<%= request.host  %>/assets/SHARE_Overlay_Text.png" /></span></p>
