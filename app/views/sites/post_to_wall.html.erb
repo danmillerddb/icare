@@ -8,7 +8,7 @@ $(document).ready( function() {
     console.log("redirect_uri: <%= request.host_with_port %>");
     console.log("description: <%= CGI.escape(params[:description]) %> ");
     console.log("caption: " + document.referrer.split('/')[2]);
-    window.location.href = 'https://www.facebook.com/dialog/feed?app_id=363753320314028&display=page&link=' + document.referrer + '&picture=http://www.ddb01.com/tony_s/icare_test_page/fbshare.png&name=<%= CGI.escape(params[:name]) %>&caption=' + document.referrer.split('/')[2]) +  '&description=<%= CGI.escape(params[:description]) %>&redirect_uri=http://<%= request.host %>/sites/return_to_referrer';
+    window.location.href = 'https://www.facebook.com/dialog/feed?app_id=363753320314028&display=page&link=' + document.referrer + '&picture=http://www.ddb01.com/tony_s/icare_test_page/fbshare.png&name=<%= CGI.escape(params[:name]) %>&caption=' + document.referrer.split('/')[2] +  '&description=<%= CGI.escape(params[:description]) %>&redirect_uri=http://<%= request.host %>/sites/return_to_referrer';
     
 
 });
