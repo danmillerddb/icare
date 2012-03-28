@@ -78,7 +78,7 @@
 				    create: function(event, ui)
 				    {
 				       $(this).parents('.ui-dialog').css('background-image', "url('http://<%= request.host  %>/assets/SHARE_Overlay_03.png')");
-				       $(this).parents('.ui-dialog').css('background-image', "url('http://<%= request.host  %>/assets/SHARE_Overlay_03.png')");
+				       $(this).parents('.ui-dialog').css('background-repeat', "no-repeat");
 				       $(this).find('p').css('text-align', 'center');
 				       $(this).parents().find('.ui-dialog-titlebar').css('display', 'none');
 				       $(this).find('div#dialog-nav-options').css('margin-top', '65px');
