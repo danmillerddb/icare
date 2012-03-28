@@ -27,7 +27,7 @@
       <img src="/assets/HERO_TORNADO.png" id="hero_image3" class="hero_images" />
        <img src="/assets/HERO_TRENDING.png" id="hero_image4" class="hero_images" />
     </div>
-    <div id="info_container"><hr style="width: 635px;"/>
+    <div id="info_container">
       <div id="left_image">
 	<img src="/assets/LEFT_ARROW_SEE.png" id="see_the_impact" />
       </div>

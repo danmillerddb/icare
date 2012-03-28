@@ -18,7 +18,6 @@ class SitesController < ApplicationController
   
   def post_to_wall
     session[:icare_referrer] = request.env['HTTP_REFERER']
-    puts "referrer: " + session[:icare_referrer]
     respond_to do |format|
       format.html 
       format.json { render json: @sites }

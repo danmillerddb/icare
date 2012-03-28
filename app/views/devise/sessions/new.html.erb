@@ -4,7 +4,7 @@
 
 <div id="wrapper">
   <div id="topbar">
-      <img src="/assets/I_CARE_Logo.png" id="icare_logo"/>
+      <img src="/assets/I_CARE_Logo.png" id="icare_logo"/><span id="beta_text">BETA</span>
       <div id="signin">
 	  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 	    <%= f.email_field :email, :id => 'user_email', :value => 'email' %>

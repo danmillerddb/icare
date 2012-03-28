@@ -183,11 +183,19 @@ table#sites_table th, table.api_table th
   background-color: #a9dbd2;
 }
 
-table#sites_table td, table.api_table td
+table#sites_table td
 {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 0px;
+  padding-right: 10px;
+}
+
+table.api_table td
+{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 18px;
   padding-right: 10px;
 }
 
@@ -199,6 +207,7 @@ table#sites_table td.clicks_to_date_column, table.api_table td.clicks_to_date_co
   border-bottom: 0px;
   border-style: solid;
 }
+
 
 
 table#sites_table tr#last_row, table.api_table tr#last_row
@@ -505,6 +514,15 @@ div#topbar img#icare_logo
   vertical-align: bottom;
 }
 
+
+div#topbar span#beta_text
+{
+  position: relative;
+  float: left;
+  margin-left: 30px;
+  margin-top: 10px;
+  vertical-align: bottom;
+}
 
 div#bottom_signup input#signup_user_password
 {
