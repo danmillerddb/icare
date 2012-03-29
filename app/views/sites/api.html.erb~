@@ -203,8 +203,7 @@
       </tr>
       <tr id="last_row">
 	  <td><b>JSON:</b><br/><code   class="prettyprint lang-js">
-	  {"_id":"4f67b35f85200207b30000a1",
-	   "description":"[enter description]","name":"[enter name]","tags":[enter tags],"url":"[enter your site URL]"}}      
+	  {"description":"[enter description]","name":"[enter name]","tags":[enter tags],"url":"[enter your site URL]"}}      
 		 </code>	
 	  
 	  </td>
