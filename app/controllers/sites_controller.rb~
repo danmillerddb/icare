@@ -80,8 +80,10 @@ class SitesController < ApplicationController
   def show
     @site = current_user.sites.find(params[:id])
     @vote_count = @site.votes_count
+    
+    
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => :none   } # show.html.erb
       format.json { render json: @site }
     end
   end

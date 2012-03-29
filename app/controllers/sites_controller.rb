@@ -83,7 +83,7 @@ class SitesController < ApplicationController
     
     
     respond_to do |format|
-      format.html { render :layout => :none   } # show.html.erb
+      format.html { render :layout => false   } # show.html.erb
       format.json { render json: @site }
     end
   end
