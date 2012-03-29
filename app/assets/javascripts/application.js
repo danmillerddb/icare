@@ -82,6 +82,11 @@ $(document).ready( function() {
      
   });
    
+   $('img#icare_logo').click(function() {
+    window.location.href = "/sites/";
+     
+  });
+   
    
 });
 

@@ -9,6 +9,8 @@
 //= require_tree .
 
 $(document).ready( function() {
+    $('div#rotating_hero_div img#hero_image').show();
+
     if (! $.browser.msie) //only rotate banners if not IE browser
     {
       rotate_banners();
@@ -85,7 +87,6 @@ $(document).ready( function() {
 
 function rotate_banners()
 {
-    $('div#rotating_hero_div img#hero_image').show();
     $('div#rotating_hero_div img.banners').hide();    
     //$('div#effient_banner img#banner1').fadeIn(7000);
   //  $('div#effient_banner img#banner1').delay(1000);
