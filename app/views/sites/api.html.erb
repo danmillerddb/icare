@@ -18,7 +18,7 @@
 	  
 	  
 	  <% if user_signed_in? %>
-	    <b>Your authentication token</b>: <%= current_user.authentication_token %>
+	    <b>Your user authentication token</b>: <%= current_user.authentication_token %><br/>
 	  <% else %>
 	    <%= link_to 'Create an account first', :root %>
 	  <% end %>
@@ -71,7 +71,7 @@
   
       <tr class="showcode_row">
 	<td colspan="2" >
-	   <b>GET</b> http://<%= request.host_with_port %>/sites/<b>[site_id]</b>?auth_token=<%= current_user.authentication_token %>
+	   <b>GET</b> http://<%= request.host_with_port %>/sites/<b>topic_id</b>?auth_token=<%= current_user.authentication_token %>
 	</td>
       </tr>
 	
@@ -106,7 +106,7 @@
   
       <tr class="showcode_row">
 	<td colspan="2" >
-	   <b>PUT</b> http://<%= request.host_with_port %>/sites/<b>[site_id]</b>.json?auth_token=<%= current_user.authentication_token %>
+	   <b>PUT</b> http://<%= request.host_with_port %>/sites/<b>topic_id</b>.json?auth_token=<%= current_user.authentication_token %>
 	</td>
       </tr>
 	
@@ -125,10 +125,13 @@
 	<td class="clicks_to_date_column"></td>
       </tr>
       <tr id="last_row">
-	  <td><b>JSON:</b><br/><code   class="prettyprint lang-js">
-	  {"_id":"4f67b35f85200207b30000a1",
-	   "description":"[enter description]","name":"[enter name]","tags":[enter tags],"url":"[enter your site URL]"}}         
-		 </code>	
+	  <td><b>REQUEST BODY:</b><br/><code   class="prettyprint lang-js">
+		site[<b>fieldname</b>]=<b>value for field</b> 
+ 			 </code>
+	      <br/><br/>
+	      <b>EXAMPLE:</b> changing topic name to 'Third World Countries'<br/><code   class="prettyprint lang-js">
+		curl -i -H 'Accept: application/json'   -X PUT -d 'site[name]=<b>Third World Countries</b>' http://<%= request.host_with_port %>/sites/<b>topic_id</b>.json?auth_token=<%= current_user.authentication_token %>
+ 			 </code>
 	  </td>
       </tr>
     </table>
@@ -145,7 +148,7 @@
   
       <tr class="showcode_row">
 	<td colspan="2" >
-	   <b>DELETE</b> http://<%= request.host_with_port %>/sites/<b>[site_id]</b>.json?auth_token=<%= current_user.authentication_token %>
+	   <b>DELETE</b> http://<%= request.host_with_port %>/sites/<b>topic_id</b>.json?auth_token=<%= current_user.authentication_token %>
 	</td>
       </tr>
 	
@@ -154,7 +157,7 @@
 	<td>
 	   
 		<div class="manager_caretopic_left" id="new_caretopic">
-		 	      
+	      
 				    
 		</div>
 		<div class="manager_caretopic_right">

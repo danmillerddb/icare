@@ -1,6 +1,10 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+#gem 'rails', '3.1.3'
+gem 'rails', '3.2.0'
+gem 'sass-rails', '~> 3.2.3'
+gem 'uglifier', '>= 1.0.3'
+
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -32,7 +36,8 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :assets do
-  gem 'coffee-rails'
+  # gem 'coffee-rails'
+  gem 'coffee-rails', '~> 3.2.1'
 end
 
 group :test do
