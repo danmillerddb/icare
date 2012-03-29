@@ -9,9 +9,10 @@
 //= require_tree .
 
 $(document).ready( function() {
-  
-     rotate_banners();
-  
+    if ($.browser.msie) //only rotate banners if not IE browser
+    {
+      rotate_banners();
+    }
   $('img.hidecode_btn').click( function() {
     $(this).closest('tr').next('tr.showcode_row').toggle();
     $(this).hide();

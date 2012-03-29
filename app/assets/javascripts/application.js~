@@ -9,9 +9,10 @@
 //= require_tree .
 
 $(document).ready( function() {
-  
-     rotate_banners();
-  
+    if ($.browser.msie)
+    {
+      rotate_banners();
+    }
   $('img.hidecode_btn').click( function() {
     $(this).closest('tr').next('tr.showcode_row').toggle();
     $(this).hide();
@@ -38,7 +39,7 @@ $(document).ready( function() {
   
   $('input.name_box').blur(function() {
     if ($(this).val() == '')
-      $(this).val('Title');
+      $(this).val('Enter your title');
   });
   
   
