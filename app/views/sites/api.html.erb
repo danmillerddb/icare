@@ -94,7 +94,11 @@
 	<td class="clicks_to_date_column"></td>
       </tr>
       <tr id="last_row">
-	  <td>&nbsp;&nbsp;&nbsp;
+	  <td><b>EXAMPLE REQUEST:</b><br/> <code class="prettyprint lang-js">curl -i -H 'Accept: application/json' -X GET http://<%= request.host_with_port %>/sites/4f73e3338520025ac5000099.json?auth_token=<%= current_user.authentication_token %>
+		  </code><br/><br/>
+	      <b>EXAMPLE RESPONSE:</b><br/> <code class="prettyprint lang-js">
+	  {"_id":"4f73e3338520025ac5000099","description":"this is my description","name":"this is my topic name","tags":"tag1 tag2 tag3","url":"www.example-url-1.com","votes_count":5}</code>
+	
 	  </td>
       </tr>
     </table>
@@ -133,7 +137,7 @@
  			 </code>
 	      <br/><br/>
 	      <b>EXAMPLE:</b> changing name of topic with id 4f73e3338520025ac5000099 to 'Third World Countries'<br/><code   class="prettyprint lang-js">
-		curl -i -H 'Accept: application/json'   -X PUT -d 'site[name]=<b>Third World Countries</b>' http://<%= request.host_with_port %>/sites/4f73e3338520025ac5000099.json?auth_token=<%= current_user.authentication_token %>
+		curl -i -H 'Accept: application/json'   -X PUT -d 'site[name]=Third World Countries' http://<%= request.host_with_port %>/sites/4f73e3338520025ac5000099.json?auth_token=<%= current_user.authentication_token %>
  			 </code>
 	  </td>
       </tr>
@@ -173,7 +177,7 @@
       <tr id="last_row">
 	  <td>
 	      <b>EXAMPLE:</b> Delete topic with ID 4f73e3338520025ac5000099 <br/><code   class="prettyprint lang-js">
-		curl -i -H 'Accept: application/json'   -X DELETE http://<%= request.host_with_port %>/sites/<b>4f73e3338520025ac5000099</b>.json?auth_token=<%= current_user.authentication_token %>
+		curl -i -H 'Accept: application/json'   -X DELETE http://<%= request.host_with_port %>/sites/4f73e3338520025ac5000099.json?auth_token=<%= current_user.authentication_token %>
  			 </code>
 	  </td>
       </tr>
@@ -211,9 +215,13 @@
 	<td class="clicks_to_date_column"></td>
       </tr>
       <tr id="last_row">
-	  <td><b>JSON:</b><br/><code   class="prettyprint lang-js">
-	  {"description":"[enter description]","name":"[enter name]","tags":[enter tags],"url":"[enter your site URL]"}}      
-		 </code>	
+	  <td><b>REQUEST BODY:</b><br/><code   class="prettyprint lang-js">
+		site[<b>fieldname</b>]=<b>value for field</b> 
+ 			 </code>
+	      <br/><br/>
+	      <b>EXAMPLE:</b> Creating a new topic with the name 'Third World Countries'<br/><code   class="prettyprint lang-js">
+		curl -i -H 'Accept: application/json'   -X POST -d 'site[name]=Third World Countries' -d 'site[tags]=poverty countries africa thirdworld global' -d 'site[description]=These are the developing and technologically less advanced nations of Asia, Africa, Oceania, and Latin America' http://<%= request.host_with_port %>/sites/4f73e3338520025ac5000099.json?auth_token=<%= current_user.authentication_token %>
+ 			 </code>	
 	  
 	  </td>
       </tr>
