@@ -4,14 +4,14 @@
 		<script  type="text/javascript" src='http://connect.facebook.net/en_US/all.js'></script>
 		<script language="javascript">
 		$(document).ready( function() {
-			$.get('http://<%= request.host  %>/sites/get_count/<%= site.id %>', function(data) {
+			$.get('http://<%= request.host_with_port  %>/sites/get_count/<%= site.id %>', function(data) {
 			  $('span#support_count').html(data);
 			});
 	        	$('a#icare_button_link').click( function() {
          		$.get($('a#icare_button_link').attr('href'), function(data) {
 			
 			}).error(function() { 
-			      $(location).attr('http://<%= request.host  %>'); 
+			      $(location).attr('http://<%= request.host_with_port  %>'); 
 			});
 			$( "#dialog:ui-dialog" ).dialog( "destroy" );
 		    
@@ -21,7 +21,7 @@
 				    width: 488,
 				    create: function(event, ui)
 				    {
-				       $(this).parents('.ui-dialog').css('background-image', "url('http://<%= request.host  %>/assets/SHARE_Overlay_03.png')");
+				       $(this).parents('.ui-dialog').css('background-image', "url('http://<%= request.host_with_port  %>/assets/SHARE_Overlay_03.png')");
 				       $(this).parents('.ui-dialog').css('background-repeat', "no-repeat");
 				       $(this).find('p').css('text-align', 'center');
 				       $(this).parents().find('.ui-dialog-titlebar').css('display', 'none');
@@ -40,10 +40,10 @@
 		    });
 		});
 		
-		</script> <a id="icare_button_link" href="http://<%= request.host  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host  %>/ICARE_button_FINAL_03.png" border="0" /></a> &nbsp;<span id="support_count"></span>
+		</script> <a id="icare_button_link" href="http://<%= request.host_with_port  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host_with_port  %>/ICARE_button_FINAL_03.png" border="0" /></a> &nbsp;<span id="support_count"></span>
 		
 		<div id="dialog-confirm" style="display:none; ">
-			<p><span class="ui-icon ui-icon-alert" style="margin-left: auto; margin-right: auto;"><br/><br/><br/><img src="http://<%= request.host  %>/assets/SHARE_Overlay_Text.png" /></span></p>
+			<p><span class="ui-icon ui-icon-alert" style="margin-left: auto; margin-right: auto;"><br/><br/><br/><img src="http://<%= request.host_with_port  %>/assets/SHARE_Overlay_Text.png" /></span></p>
 		<a href="" id="exit_link" onclick="$('#dialog-confirm').dialog('close');" style="vertical-align:top; font-family:helvetica, arial, verdana; text-decoration: none; position: relative; top: -120px; left: 460px; font-size: 22px; color: #71a2a0;"/>X</a>
-			<div id="dialog-nav-options" style="position: relative; margin-top: 60px;"><div style="position: relative; left: -40px; "><a href="http://<%= request.host  %>" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; top: 0px; margin-right: 17px; font-size: 11px; color: #71a2a0;"/>Learn more at www.ICARE-MOVEMENT.com</a></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name.to_s)) %>&description=<%= escape_javascript(URI::encode(site.description.to_s + '. Join the movement at www.ICARE-MOVEMENT.com')) %>"><img border="0" style="cursor:pointer;position: relative; left: 178px;margin-bottom: 17px; top: -25px;" src="http://<%= request.host.to_s  %>/assets/FB_SHARE_BTN.png" /></a></div>
+			<div id="dialog-nav-options" style="position: relative; margin-top: 60px;"><div style="position: relative; left: -40px; "><a href="http://<%= request.host_with_port  %>" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; top: 0px; margin-right: 17px; font-size: 11px; color: #71a2a0;"/>Learn more at www.ICARE-MOVEMENT.com</a></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name.to_s)) %>&description=<%= escape_javascript(URI::encode(site.description.to_s + '. Join the movement at www.ICARE-MOVEMENT.com')) %>"><img border="0" style="cursor:pointer;position: relative; left: 178px;margin-bottom: 17px; top: -25px;" src="http://<%= request.host.to_s  %>/assets/FB_SHARE_BTN.png" /></a></div>
 		</div>
