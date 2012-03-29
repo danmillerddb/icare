@@ -9,7 +9,7 @@
 //= require_tree .
 
 $(document).ready( function() {
-    if ($.browser.msie) //only rotate banners if not IE browser
+    if (! $.browser.msie) //only rotate banners if not IE browser
     {
       rotate_banners();
     }
