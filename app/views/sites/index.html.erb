@@ -54,20 +54,23 @@
       <tr class="showcode_row">
 	<td colspan="2" >
 	  <textarea class="manager_copytext" >
-		<style> span#support_count { font-family: helvetica, arial, verdana; font-size: 11px; position: relative; bottom: 8px;} </style>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-		<script  type="text/javascript" src='http://connect.facebook.net/en_US/all.js'></script>
-		<script language="javascript">
+		<style> 
+span#support_count1 { font-family: helvetica, arial, verdana; font-size: 11px; position: relative; bottom: 8px;} 
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script> 
+<script  type="text/javascript" src='http://connect.facebook.net/en_US/all.js'></script> 
+<script language="javascript">
 		$(document).ready( function() {
-			$.get('http://<%= request.host  %>/sites/get_count/<%= site.id %>', function(data) {
-			  $('span#support_count').html(data);
+			
+			$.get('http://www.icare-movement.com/sites/get_count/4f843f41dbb2f57cfa00099e', function(data) {
+			  $('span#support_count1').html(data);
 			});
 	        	$('a#icare_button_link').click( function() {
          		$.get($('a#icare_button_link').attr('href'), function(data) {
 			
 			}).error(function() { 
-			      $(location).attr('http://<%= request.host  %>'); 
+			      $(location).attr('http://www.icare-movement.com'); 
 			});
 			$( "#dialog:ui-dialog" ).dialog( "destroy" );
 		    
@@ -77,14 +80,12 @@
 				    width: 488,
 				    create: function(event, ui)
 				    {
-				       $(this).parents('.ui-dialog').css('background-image', "url('http://<%= request.host  %>/assets/SHARE_Overlay_03.png')");
+				       $(this).parents('.ui-dialog').css('background-image', "url('http://www.icare-movement.com/assets/SHARE_Overlay_03.png')");
 				       $(this).parents('.ui-dialog').css('background-repeat', "no-repeat");
 				       $(this).find('p').css('text-align', 'center');
 				       $(this).parents().find('.ui-dialog-titlebar').css('display', 'none');
-				       $(this).find('div#dialog-nav-options').css('margin-top', '65px');
-				       $(this).find('div#dialog-nav-options').css('margin-left', '60px');
-
-				   
+					   $(this).find('div#dialog-nav-options').css('margin', '65px 0 0 60px');
+				      
 				    }
 				    ,
 				    modal: true
@@ -96,13 +97,16 @@
 		    });
 		});
 		
-		</script> <a id="icare_button_link" href="http://<%= request.host  %>/imp_sites/<%= @current_user.id %>/<%= site.id %>" data-remote="true"><img src="http://<%= request.host  %>/ICARE_button_FINAL_03.png" border="0" /></a> &nbsp;<span id="support_count"></span>
-		
-		<div id="dialog-confirm" style="display:none; ">
-			<p><span class="ui-icon ui-icon-alert" style="margin-left: auto; margin-right: auto;"><br/><br/><br/><img src="http://<%= request.host  %>/assets/SHARE_Overlay_Text.png" /></span></p>
-		<a href="" id="exit_link" onclick="$('#dialog-confirm').dialog('close');" style="vertical-align:top; font-family:helvetica, arial, verdana; text-decoration: none; position: relative; top: -120px; left: 460px; font-size: 22px; color: #71a2a0;"/>X</a>
-			<div id="dialog-nav-options" style="position: relative; margin-top: 60px;"><div style="position: relative; left: -40px; "><a href="http://<%= request.host  %>" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; top: 0px; margin-right: 17px; font-size: 11px; color: #71a2a0;"/>Learn more at www.ICARE-MOVEMENT.com</a></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://<%= request.host_with_port  %>/sites/post_to_wall?name=<%= escape_javascript(URI::encode(site.name.to_s)) %>&description=<%= escape_javascript(URI::encode(site.description.to_s + '. Join the movement at www.ICARE-MOVEMENT.com')) %>"><img border="0" style="cursor:pointer;position: relative; left: 178px;margin-bottom: 17px; top: -25px;" src="http://<%= request.host.to_s  %>/assets/FB_SHARE_BTN.png" /></a></div>
-		</div>
+		</script> 
+</script> <a id="icare_button_link" href="http://www.icare-movement.com/imp_sites/4f70b9b5dbb2f57cfa00000a/4f85f802dbb2f57cfa000e65" data-remote="true"><img src="http://www.icare-movement.com/ICARE_button_FINAL_03.png" border="0" /></a>  <span id="support_count4"></span>
+<div id="dialog-confirm" style="display:none; ">
+  <div class="ui-icon ui-icon-alert" style="position:relative; top:65px;margin-right:auto; text-align:center;">
+    <img src="http://www.icare-movement.com/assets/SHARE_Overlay_Text.png" border="0" /></div>
+  <a href="" id="exit_link" onclick="$('#dialog-confirm').dialog('close');" style="vertical-align:top; font-family:helvetica, arial, verdana; text-decoration: none; position: relative; top: -50px; left: 460px; font-size: 22px; color: #71a2a0; outline:none; width:19px; height:22px;"/><img src="http://www.ddb01.com/tony_s/icare_test_page/btn_x_close.jpg" border="0" /></a>
+  <div id="dialog-nav-options" style="position: relative; top: 70px;">
+    <div style="position: relative; left: -40px; "><a href="http://www.icare-movement.com" style="vertical-align:top; font-family:helvetica, arial, verdana; position: relative; font-size: 11px; color: #71a2a0;"/>Learn more at www.ICARE-MOVEMENT.com</a></div>
+    <a href="http://www.icare-movement.com/sites/post_to_wall?name=testTopic%20A&description=testDescription%20A.%20Join%20the%20movement%20at%20www.ICARE-MOVEMENT.com"><img border="0" style="cursor:pointer;position: relative; left: 202px; bottom:25px; " src="http://www.icare-movement.com/assets/FB_SHARE_BTN.png" /></a></div>
+</div>
 	  </textarea>
 	</td>
       </tr>

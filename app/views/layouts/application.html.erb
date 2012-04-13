@@ -16,14 +16,17 @@
   <% end %>
 
   <%= csrf_meta_tags %>
-  
+   <script type="text/javascript" src="http://www.ddb01.com/28541_ICARE/flash/swfobject.js"></script>
+		<script type="text/javascript">
+		swfobject.registerObject("iCareVid", "9.0.0", "http://www.ddb01.com/28541_ICARE/flash/expressInstall.swf");
+		</script>
 </head>
 <body>
 
 <%= yield %>
 
   <div id="legal_copy">
-  &copy; 2012 DDB Worldwide Communications Group Inc. All rights reserved.
+  &copy; 2012 DDB
   </div>
 </body>
 </html>

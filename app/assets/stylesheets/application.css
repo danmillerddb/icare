@@ -477,10 +477,8 @@ hr
 div#bottom_signup
 {
   position: relative;
-  margin-top: 330px;
   width: 635px;
-  margin-left: auto;
-  margin-right: auto;
+  margin:280px auto 0;
   padding-left: 2px;
 }
 
@@ -548,16 +546,12 @@ img.full_report_btn
   margin-top: 36px;
 }
 
-
-
 div#legal_copy
 {
   text-align: center;
-
   position: relative;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  margin:50px auto 20px;
+  font-size:11px;
 }
 
 input#sign_in
@@ -566,3 +560,11 @@ input#sign_in
   width: 80px;
   height: 30px;
 }
+#videoplayer{
+			background:url(../images/videoplayer_back.png) no-repeat;
+			position:relative;
+			width:694px;
+			height:370px;
+			margin:70px auto 0;
+			padding:5px 0 0 0;
+		}
